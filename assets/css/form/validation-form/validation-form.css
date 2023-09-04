@@ -1,0 +1,75 @@
+.input-container{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.input-container{
+    border: solid .2rem transparent;
+    transition: all .3s ease-in-out;
+}
+.input-container i{
+    position: absolute;
+    right: 1.2rem;
+    color: var(--check-color);
+    font-weight: 600;
+}
+.bxs-error, .bx-check{
+    display: block;
+    z-index: 10;
+    color: var(--error-color);
+    font-size: 1.8rem;
+}
+.bxs-error{
+    font-size: 1.4rem;
+}
+.bxs-error{
+    padding-left: .8rem;
+}
+.input-container{
+    position: relative;
+}
+.bx-check{
+    font-size: 2rem;
+}
+.form-group.active-check .input-container select,
+.form-group.active-check .input-container input {
+    border: solid .1rem var(--check-color);
+}
+
+.input-container i{
+    opacity: 0;
+    z-index: -2;
+}
+.form-group.active-check .input-container i{
+    opacity: 1;
+    z-index: 2;
+}
+.error-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    column-gap: .8rem;
+    align-items: center;
+}
+.form-group .error-container{
+    opacity: 0;
+    z-index: -1;
+    transition: all .3s ease-in;
+}
+.form-group.active-error .error-container{
+    opacity: 1;
+    z-index: 2;
+}
+.form-group.active-error .input-container select,
+.form-group.active-error .input-container input{
+    border: solid .1rem var(--error-color);
+}
+
+
+.error-message {
+  color: var(--error-color);
+  font-size: 1.2rem;
+  transition: all .3s ease-in-out;
+  text-align: center;
+  font-family: var(--title-font);
+}

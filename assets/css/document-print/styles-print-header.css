@@ -1,0 +1,64 @@
+body{
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: content-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+.header{
+    padding: 1rem;
+    height: 14rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.doc_data{
+    width: 42rem;
+    height: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+
+}
+.doc_data .form-title{
+    font-size: 2.8rem;
+    font-weight: 500;
+}
+.doc_data-content{
+    width: 100%;
+    height: 80%;
+}
+.doc_data-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: solid .1rem black;
+    padding: .5rem 4rem .5rem 1rem;
+    border-radius: .2rem;
+}
+.doc_data-content .data{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: .4rem;
+}
+.doc_data-content .data span:nth-child(1){
+    font-size: 1.2rem;
+    color: var(--text-f-c);
+}
+.doc_data-content .data span:nth-child(2){
+    font-size: 1.4rem;
+}
+
+/* logo agi header */
+.doc_logo{
+    height: 100%;
+}
+.doc_logo figure{
+    width: 100%;
+    height: 100%;
+}
+.doc_logo figure img{
+    object-fit: contain;
+}

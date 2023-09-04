@@ -1,0 +1,160 @@
+.grid-form{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: repeat(4, auto);
+    align-content: start;
+    justify-content: space-between;
+    gap: .8rem .8rem;
+}
+
+.form-group{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    justify-content: center;
+}
+
+.input-container input,
+.input-container select{
+    width: 100%;
+    border: .1rem solid var(--border-input);
+    border-radius: .4rem;
+    padding:1.2rem;
+    padding-right: 3rem;
+    transition: all 0.3s ease;
+}
+
+
+.form-group input:focus {
+  outline: none;
+  border:.1rem solid #32a0ff;
+}
+
+.label-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.form-group label{
+    font-size: 1.4rem;
+    color: rgb(138, 138, 138);
+    font-weight: 500;
+}
+
+.form-birthdate  input,
+.form-age input,
+.form-children input{
+    padding: 1.2rem;
+}
+
+/* btn next form */
+
+.form-btns-container{
+    width: 100%;
+    height: max-content;
+    display:grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr;
+}
+.pager-container{
+    grid-column: 2/3;
+    justify-self: flex-end;
+    align-items: center;
+    display: flex;
+    column-gap: .8rem;
+    position: relative;
+}
+.save-btn-container{
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.arrow {
+    font-weight: 600;
+    font-size: 1.6rem;
+    vertical-align: middle;
+}
+#saveButton{
+    grid-column: 1/2;
+}
+
+
+.form-btns {
+    font-size: 1.4rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: .4rem;
+    padding: 0 1rem;
+    border-radius: .4rem;
+    font-weight: bolder;
+    transition: background-color 0.2s;
+}
+.pager,
+.pager i{
+    color: #737373;
+}
+.pager:hover, 
+.pager:hover i{
+    transition: all .3s ease-in-out;
+    color: #14297a;
+}
+
+.pager:hover .bx-left-arrow-alt{
+    transform: translateX(-.4rem)
+}
+.pager:hover .bx-right-arrow-alt{
+    transform: translateX(.4rem)
+}
+.save,
+.print-button{
+    border: solid .1rem black;
+    color: white;
+    background-color: black;
+    right: 0;
+    width: 10rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+    padding: .6rem 2rem;
+    border-radius: .4rem;
+    font-weight: bolder;
+    text-align: center;
+}
+
+#prevButton,
+#nextButton,
+#saveButton{
+    display: block;
+    opacity: 0;
+    z-index: -1;
+    transition: all .2s ease
+}
+
+.hidden{
+    display: none;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url('../../img/logos/arrow.svg') no-repeat right center;
+    padding-right: 20px;
+    background-color: #ffff;
+    color: var(--border-input);
+    border: 1px solid var(--border-input);
+    cursor: pointer;
+}
+.input-container input[type="date"]{
+    color: var(--border-input);
+}
+
+
+/* hidde the input slected */

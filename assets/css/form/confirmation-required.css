@@ -1,0 +1,9 @@
+.important-details .form-group{
+    grid-column: 1/5;
+}
+.travel-details .form-group{
+    grid-column: 1/5;
+}
+.sales-experience .form-group{
+    grid-column: 1/5;
+}

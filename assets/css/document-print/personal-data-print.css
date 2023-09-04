@@ -1,0 +1,41 @@
+
+.data-groups {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border: 1px solid black; 
+    border-radius: .4rem;
+}
+
+.data-group {
+  border-bottom: solid 1px black;
+}
+.data-group{
+   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
+  grid-template-rows: auto;
+}
+.data-group:last-of-type{
+    border-bottom: none;
+}
+.data-field{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    row-gap: 1rem;
+    border-right: solid 1px black;
+}
+.data-field:last-of-type{
+    border-right: none;
+}
+.field-label{
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+.field-value{
+    font-size: 1.4rem;
+    font-weight: 500;
+}
