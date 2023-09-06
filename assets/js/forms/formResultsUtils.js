@@ -1,6 +1,7 @@
 import { displayHeaderInfo } from "./headerLeftDisplay.js";
 import { updateGlobalData, getGlobalData, buttonsShow, stepCounter, clearComplete, hideModal } from "./global/global.js";
 import { validateInputs } from "./validate-form/validationFunctions.js";
+import { showMessageHeader } from "./header-meesages/header-messages.js";
 validateInputs
 
 const toggleBtns = document.querySelectorAll(".button[data-form]");
@@ -73,14 +74,16 @@ function toogleEvent() {
 
 const showFormContainerMatch = (idToggle, dataArray) => {
   const formSections = document.querySelectorAll(".sections-toggle-form");
-
   let selectedSection = null;
-
   formSections.forEach((section) => {
     if (idToggle === section.id) {
       section.classList.add("active-selected");
       selectedSection = section;
       displayHeaderInfo(idToggle, dataArray);
+      showMessageHeader(selectedSection)
+
+      // Aqui se debe llamar la funcion.
+
     } else {
       section.classList.remove("active-selected");
     }
@@ -88,8 +91,5 @@ const showFormContainerMatch = (idToggle, dataArray) => {
 
   if (selectedSection !== null) {
     return selectedSection;
-  }
+  };
 };
-
-
- 

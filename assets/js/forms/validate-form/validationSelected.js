@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const validateAndStyleSelect = (container, valid) => {
         const inputContainer = container.querySelector(".input-container")
-        const errorContainer = container.querySelector(".error-container");
 
         if(!valid){
             inputContainer.classList.remove("valid");

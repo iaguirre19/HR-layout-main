@@ -1,4 +1,5 @@
 import { getGlobalData, buttonsShow, stepCounter, storeFormData } from "../global/global.js";
+import { showMessageHeader } from "../header-meesages/header-messages.js";
 import { storageInputsPart } from "../storageForm/storageForm.js";
 // import { printContent } from "../print-form/printingForm.js";
 import { validateInputs } from "../validate-form/validationFunctions.js";
@@ -31,7 +32,6 @@ function changePage(action) {
 
   if (activeIndex !== -1) {
     const activeElement = currentPosition[activeIndex];
-    console.log(activeElement)
     if (action === "next") {
       const invalidChild = activeElement.querySelector(".invalid");
 
@@ -62,6 +62,7 @@ function changePage(action) {
 
             buttonsShow(stepCounter(divContainer));
             validateInputs(divContainer);
+            showMessageHeader(divContainer);
           }
         } 
       }
@@ -74,6 +75,7 @@ function changePage(action) {
         prevElement.classList.replace("hidden", "active-part");
 
         buttonsShow(stepCounter(divContainer));
+        showMessageHeader(divContainer);
       }
     }
   }

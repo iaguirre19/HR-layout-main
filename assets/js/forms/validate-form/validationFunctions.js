@@ -88,7 +88,6 @@ export function validateInputs(content) {
     const errorContainer = mainContainer.querySelector(".error-container");
 
     if (input.validity.valid) {
-      console.log(inputContainer)
       mainContainer.classList.add("valid")
       mainContainer.classList.remove("invalid")
       mainContainer.classList.remove("active-error");

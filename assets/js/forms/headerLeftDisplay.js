@@ -3,21 +3,21 @@ export const displayHeaderInfo = (formSelected, headerData) => {
     if (formSelected === Object.keys(data)[0]) {
       const properties = data[formSelected];
       const title = properties.title;
-      const description = properties.description;
+      // const description = properties.description;
       const icon = properties.icon;
-      printSectionInfo(title, description, icon);
+      printSectionInfo(title, icon);
       resetForm();
     }
   });
 };
 
-const printSectionInfo = (title, description, icon) => {
+const printSectionInfo = (title, icon) => {
   const iconContainer = document.querySelector(".icon");
   const titleContainer = document.querySelector(".title-form-h2");
-  const titleDescription = document.querySelector(".title-form-description");
+  // const titleDescription = document.querySelector(".title-form-description");
   
   iconContainer.innerHTML = icon; 
-  titleDescription.textContent = description;
+  // titleDescription.textContent = description;
   titleContainer.textContent = title;
 };
 

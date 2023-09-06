@@ -95,7 +95,7 @@
                                 <!-- Personal data section -->
                                 <div class="personal-data sections-toggle-form"  id="data-personal" >
                                     <!-- Group 1 -->
-                                    <div class="data-personal-one step hidden grid-form">
+                                    <div class="data-personal-one step hidden grid-form group-1">
                                         <div class="form-group form-name">
                                             <div class="label-container">
                                                 <label for="name">Nombre</label>
@@ -108,7 +108,6 @@
                                                 <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                    
                                         <div class="form-group form-last-name">
                                             <div class="label-container">
                                                 <label for="last-name">Apellido Paterno</label>
@@ -121,7 +120,6 @@
                                                 <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                    
                                         <div class="form-group form-middle-name">
                                             <div class="label-container">
                                                 <label for="middle-name">Apellido Materno</label>
@@ -134,7 +132,6 @@
                                                 <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                    
                                         <div class="form-group form-birthplace">
                                             <div class="label-container">
                                                 <label for="birthplace">Lugar de Nacimiento</label>
@@ -147,8 +144,6 @@
                                                 <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-
-                                    
                                         <div class="form-group form-nationality">
                                             <div class="label-container">
                                                 <label for="nationality">Nacionalidad</label>
@@ -161,8 +156,6 @@
                                                 <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-
-                                    
                                         <div class="form-group form-birthdate">
                                             <div class="label-container">
                                                 <label for="birthdate">Fecha de Nacimiento</label>
@@ -174,8 +167,6 @@
                                                 <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-
-                                    
                                         <div class="form-group form-gender">
                                             <div class="label-container">
                                                 <label for="gender">Género</label>
@@ -188,14 +179,12 @@
                                                     <option value="other">Otro</option>
                                                 </select>
 
-                                                <input type="hidden" id="optionSelected" required>
+                                                
                                             </div>
                                             <div class="error-container">
                                                 <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-
-                                    
                                         <div class="form-group form-age">
                                             <div class="label-container">
                                                 <label for="age">Edad</label>
@@ -208,11 +197,9 @@
                                                 <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-
                                     </div>
-
                                     <!-- Group 2 -->
-                                    <div class="data-personal-two step hidden grid-form">
+                                    <div class="data-personal-two step hidden grid-form group-2" >
                                         <div class="form-group form-address">
                                             <div class="label-container">
                                                 <label for="address">Dirección</label>
@@ -224,8 +211,7 @@
                                             <div class="error-container">
                                                 <i class='bx bxs-error'></i>
                                             </div>
-                                        </div>
-                                        
+                                        </div> 
                                         <div class="form-group form-street-number">
                                             <div class="label-container">
                                                 <label for="street-number">Número</label>
@@ -238,7 +224,6 @@
                                                 <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                        
                                         <div class="form-group form-suburb">
                                             <div class="label-container">
                                                 <label for="suburb">Colonia</label>
@@ -251,7 +236,6 @@
                                                 <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                        
                                         <div class="form-group form-zip">
                                             <div class="label-container">
                                                 <label for="zip">Código Postal</label>
@@ -264,7 +248,6 @@
                                                 <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                        
                                         <div class="form-group form-city">
                                             <div class="label-container">
                                                 <label for="city">Ciudad o Delegación</label>
@@ -277,7 +260,6 @@
                                                 <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                        
                                         <div class="form-group form-state">
                                             <div class="label-container">
                                                 <label for="state">Estado</label>
@@ -291,371 +273,492 @@
                                             </div>
                                         </div>
                                     </div>
-
-
                                     <!-- group 3 -->
-                                    <div class="data-personal step hidden grid-form">
-                                        <div class="form-group form-living-with">
+                                    <div class="data-personal step hidden grid-form group-3">
+                                        <div class="form-group form-lives-with">
                                             <div class="label-container">
-                                                <label for="living-with">Vive Con</label>
+                                                <label for="lives-with">Vive Con</label>
                                             </div>
-                                            <input type="text" id="living-with" name="living_with" required placeholder="Ejemplo: Familiares">
+                                            <div class="input-container">
+                                                <input type="text" id="lives-with" name="vive_con" required placeholder="Ejemplo: Familiares">
+                                                <i class='bx bx-check'></i>
+                                            </div>
                                             <div class="error-container">
-                                                <i class='bx bx-error-circle'></i>
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                    
+
                                         <div class="form-group form-housing-tenure">
                                             <div class="label-container">
-                                                <label for="housing-tenure">Tenencia de Vivienda</label>
+                                                <label for="housing-tenure">Tipo de vivienda</label>
                                             </div>
-                                            <select id="housing-tenure" name="housing_tenure" required>
-                                                <option value="" disabled selected>Selecciona una opción</option>
-                                                <option value="own">Propia</option>
-                                                <option value="rent">Alquiler</option>
-                                            </select>
+                                            <div class="input-container">
+                                                <select id="housing-tenure" name="tenencia_vivienda" class="validate-select" required>
+                                                    <option value="" disabled selected>Selecciona una opción</option>
+                                                    <option value="own">Propia</option>
+                                                    <option value="rent">Alquiler</option>
+                                                </select>
+                                            </div>
                                             <div class="error-container">
-                                                <i class='bx bx-error-circle'></i>
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                    
+
                                         <div class="form-group form-marital-status">
                                             <div class="label-container">
                                                 <label for="marital-status">Estado Civil</label>
                                             </div>
-                                            <select id="marital-status" name="marital_status" required>
-                                                <option value="" disabled selected>Selecciona una opción</option>
-                                                <option value="single">Soltero</option>
-                                                <option value="married">Casado</option>
-                                                <option value="divorced">Divorciado</option>
-                                                <option value="widowed">Viudo</option>
-                                            </select>
+                                            <div class="input-container">
+                                                <select id="marital-status" name="estado_civil" class="validate-select" required>
+                                                    <option value="" disabled selected>Selecciona una opción</option>
+                                                    <option value="soltero">Soltero</option>
+                                                    <option value="casado">Casado</option>
+                                                    <option value="divorciado">Divorciado</option>
+                                                    <option value="viudo">Viudo</option>
+                                                </select>
+                                            </div>
                                             <div class="error-container">
-                                                <i class='bx bx-error-circle'></i>
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                    
+
                                         <div class="form-group form-children">
                                             <div class="label-container">
                                                 <label for="children">Hijos</label>
                                             </div>
-                                            <input type="number" id="children" name="number_of_children" min="0" required placeholder="Ejemplo: 2">
+                                            <div class="input-container">
+                                                <input type="number" id="children" name="numero_de_hijos" min="0" required placeholder="Ejemplo: 2">
+                                            </div>
                                             <div class="error-container">
-                                                <i class='bx bx-error-circle'></i>
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
                                     </div>
-
-
                                     <!-- group 4 -->
-                                    <div class="data-personal step hidden grid-form">
+                                    <div class="data-personal step hidden grid-form group-4">
                                         <div class="form-group form-education-level">
                                             <div class="label-container">
                                                 <label for="education-level">Grados de Estudio</label>
                                             </div>
-                                            <select id="education-level" name="education_level" required>
-                                                <option value="" disabled selected>Selecciona un grado</option>
-                                                <option value="primary">Primaria</option>
-                                                <option value="secondary">Secundaria</option>
-                                                <option value="high-school">Preparatoria</option>
-                                                <option value="bachelor">Licenciatura</option>
-                                                <option value="master">Maestría</option>
-                                                <option value="doctorate">Doctorado</option>
-                                                <option value="other">Otro</option>
-                                            </select>
+                                            <div class="input-container">
+                                                <select id="education-level" name="grados_de_estudio" class="validate-select" required>
+                                                    <option value="" disabled selected>Selecciona un grado</option>
+                                                    <option value="primary">Primaria</option>
+                                                    <option value="secondary">Secundaria</option>
+                                                    <option value="high-school">Preparatoria</option>
+                                                    <option value="bachelor">Licenciatura</option>
+                                                    <option value="master">Maestría</option>
+                                                    <option value="doctorate">Doctorado</option>
+                                                    <option value="other">Otro</option>
+                                                </select>
+                                            </div>
                                             <div class="error-container">
-                                                <i class='bx bx-error-circle'></i>
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                    
                                         <div class="form-group form-field-of-study">
                                             <div class="label-container">
                                                 <label for="field-of-study">Área o Carrera</label>
                                             </div>
-                                            <input type="text" id="field-of-study" name="field_of_study" required placeholder="Ejemplo: Ingeniería Informática">
+                                            <div class="input-container">
+                                                <input type="text" id="field-of-study" name="area_o_carrera" required placeholder="Ejemplo: Ingeniería Informática">
+                                                <i class='bx bx-check'></i>
+                                            </div>
                                             <div class="error-container">
-                                                <i class='bx bx-error-circle'></i>
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
                                     </div>
-
-
                                     <!-- Group 5 -->
-                                    <div class="data-personal step hidden grid-form">
+                                    <div class="data-personal step hidden grid-form group-5">
                                         <div class="form-group form-rfc">
                                             <div class="label-container">
                                                 <label for="rfc">RFC</label>
                                             </div>
-                                            <input type="text" id="rfc" name="rfc" required placeholder="Ejemplo: ABC123456DEF">
+                                            <div class="input-container">
+                                                <input type="text" id="rfc" name="rfc" required placeholder="Ejemplo: ABC123456DEF">
+                                                <i class='bx bx-check'></i>
+                                            </div>
                                             <div class="error-container">
-                                                <i class='bx bx-error-circle'></i>
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                    
                                         <div class="form-group form-curp">
                                             <div class="label-container">
                                                 <label for="curp">CURP</label>
                                             </div>
-                                            <input type="text" id="curp" name="curp" required placeholder="Ejemplo: ABCD010101HDFXYZ01">
+                                            <div class="input-container">
+                                                <input type="text" id="curp" name="curp" required placeholder="Ejemplo: ABCD010101HDFXYZ01">
+                                                <i class='bx bx-check'></i>
+                                            </div>
                                             <div class="error-container">
-                                                <i class='bx bx-error-circle'></i>
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                    
                                         <div class="form-group form-imss">
                                             <div class="label-container">
                                                 <label for="imss">IMSS</label>
                                             </div>
-                                            <input type="text" id="imss" name="imss" required placeholder="Ejemplo: 1234567890">
+                                            <div class="input-container">
+                                                <input type="text" id="imss" name="imss" required placeholder="Ejemplo: 1234567890">
+                                                <i class='bx bx-check'></i>
+                                            </div>
                                             <div class="error-container">
-                                                <i class='bx bx-error-circle'></i>
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
                                     </div>
-
-
                                     <!-- group 6 -->
-                                    <div class="data-personal step hidden grid-form">
+                                    <div class="data-personal step hidden grid-form group-6">
                                         <div class="form-group form-passport">
                                             <div class="label-container">
                                                 <label for="passport">¿Cuenta con Pasaporte?</label>
                                             </div>
-                                            <select id="passport" name="has_passport" required>
-                                                <option value="" disabled selected>Selecciona una opción</option>
-                                                <option value="yes">Sí</option>
-                                                <option value="no">No</option>
-                                            </select>
+                                            <div class="input-container">
+                                                <select id="passport" name="cuenta_con_pasaporte" class="validate-select" required>
+                                                    <option value="" disabled selected>Selecciona una opción</option>
+                                                    <option value="si">Sí</option>
+                                                    <option value="no">No</option>
+                                                </select>
+                                                
+                                            </div>
                                             <div class="error-container">
-                                                <i class='bx bx-error-circle'></i>
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                    
+
                                         <div class="form-group form-visa">
                                             <div class="label-container">
                                                 <label for="visa">¿Cuenta con Visa?</label>
                                             </div>
-                                            <select id="visa" name="has_visa" required>
-                                                <option value="" disabled selected>Selecciona una opción</option>
-                                                <option value="yes">Sí</option>
-                                                <option value="no">No</option>
-                                            </select>
+                                            <div class="input-container">
+                                                <select id="visa" name="cuenta_con_visa" class="validate-select" required>
+                                                    <option value="" disabled selected>Selecciona una opción</option>
+                                                    <option value="si">Sí</option>
+                                                    <option value="no">No</option>
+                                                </select>
+                                            </div>
                                             <div class="error-container">
-                                                <i class='bx bx-error-circle'></i>
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
+
                                     </div>
-
-
                                     <!-- group 7 -->
-                                    <div class="data-personal step hidden grid-form">
+                                    <div class="data-personal step hidden grid-form group-7">
                                         <div class="form-group form-landline-phone">
                                             <div class="label-container">
                                                 <label for="landline-phone">Teléfono Fijo</label>
                                             </div>
-                                            <input type="tel" id="landline-phone" name="landline_phone" required placeholder="Ejemplo: (123) 456-7890">
+                                            <div class="input-container">
+                                                <input type="tel" id="landline-phone" name="telefono_fijo" required placeholder="Ejemplo: (123) 456-7890">
+                                                <i class='bx bx-check'></i>
+                                            </div>
                                             <div class="error-container">
-                                                <i class='bx bx-error-circle'></i>
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                    
+
                                         <div class="form-group form-mobile-phone">
                                             <div class="label-container">
                                                 <label for="mobile-phone">Teléfono Móvil</label>
                                             </div>
-                                            <input type="tel" id="mobile-phone" name="mobile_phone" required placeholder="Ejemplo: (987) 654-3210">
+                                            <div class="input-container">
+                                                <input type="tel" id="mobile-phone" name="telefono_movil" required placeholder="Ejemplo: (987) 654-3210">
+                                                <i class='bx bx-check'></i>
+                                            </div>
                                             <div class="error-container">
-                                                <i class='bx bx-error-circle'></i>
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                    
+
                                         <div class="form-group form-email">
                                             <div class="label-container">
                                                 <label for="email">Correo Electrónico</label>
                                             </div>
-                                            <input type="email" id="email" name="email" required placeholder="Ejemplo: ejemplo@correo.com">
+                                            <div class="input-container">
+                                                <input type="email" id="email" name="correo_electronico" required placeholder="Ejemplo: ejemplo@correo.com">
+                                                <i class='bx bx-check'></i>
+                                            </div>
                                             <div class="error-container">
-                                                <i class='bx bx-error-circle'></i>
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                    
+
                                         <div class="form-group form-linkedin">
                                             <div class="label-container">
                                                 <label for="linkedin">LinkedIn</label>
                                             </div>
-                                            <input type="url" id="linkedin" name="linkedin" required placeholder="Ejemplo: https://www.linkedin.com/in/tu-perfil">
+                                            <div class="input-container">
+                                                <input type="text" id="linkedin" name="linkedin" required placeholder="Ejemplo: https://www.linkedin.com/in/tu-perfil">
+                                                <i class='bx bx-check'></i>
+                                            </div>
                                             <div class="error-container">
-                                                <i class='bx bx-error-circle'></i>
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
+
                                     </div>
-
-
                                 </div>
                                 <!-- Aditional section -->
                                 <div class="additional-data sections-toggle-form" id="additional-data">
-                                    <div class="additional-data step grid-form hidden">
+                                    <div class="additional-data step grid-form hidden group-1">
                                         <div class="form-group form-name">
                                             <div class="label-container">
                                                 <label for="first-name">Nombre</label>
                                             </div>
-                                            <input type="text" id="first-name" name="nombre" required placeholder="Ejemplo: Juan">
-                                            <div class="error-container">
-                                                <i class='bx bx-error-circle'></i>
+                                            <div class="input-container">
+                                                <input type="text" id="first-name" name="nombre" required placeholder="Ejemplo: Juan">
+                                                <i class='bx bx-check'></i>
                                             </div>
-                                        </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
+                                            </div>
+                                        </div>                      
                                         <div class="form-group form-last-name">
                                             <div class="label-container">
                                                 <label for="referal-last-name">Apellido</label>
                                             </div>
-                                            <input type="text" id="referal-last-name" name="apellido" required placeholder="Ejemplo: Pérez">
+                                            <div class="input-container">
+                                                <input type="text" id="referal-last-name" name="apellido" required placeholder="Ejemplo: Pérez">
+                                                <i class='bx bx-check'></i>
+                                            </div>
                                             <div class="error-container">
-                                                <i class='bx bx-error-circle'></i>
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
                                         <div class="form-group form-phone">
                                             <div class="label-container">
                                                 <label for="contact-phone">Teléfono de Contacto</label>
                                             </div>
-                                            <input type="tel" id="contact-phone" name="telefono" required placeholder="Ejemplo: (123) 456-7890">
+                                            <div class="input-container">
+                                                <input type="tel" id="contact-phone" name="telefono_de_contacto" required placeholder="Ejemplo: (123) 456-7890">
+                                                <i class='bx bx-check'></i>
+                                            </div>
                                             <div class="error-container">
-                                                <i class='bx bx-error-circle'></i>
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
                                         <div class="form-group form-relationship">
                                             <div class="label-container">
                                                 <label for="relationship">Parentesco</label>
                                             </div>
-                                            <input type="text" id="relationship" name="parentesco" required placeholder="Ejemplo: Padre">
+                                            <div class="input-container">
+                                                <input type="text" id="relationship" name="parentesco" required placeholder="Ejemplo: Padre">
+                                                <i class='bx bx-check'></i>
+                                            </div>
                                             <div class="error-container">
-                                                <i class='bx bx-error-circle'></i>
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
                                     </div>
-
-
                                 </div>
-
-                                <!-- continuar con los de abajop -->
                                 <!-- contact section -->
                                 <div class="contact-info sections-toggle-form" id="contact-information">
-                                    <div class="contact-info-container step grid-form hidden" id="contact-info-1">
+                                    <div class="contact-info-container step grid-form hidden group-1" >
                                         <div class="form-group company-info">
-                                            <label for="company-name">Nombre de la Empresa 1:</label>
+                                            <div class="label-container">
+                                                <label for="company-name">Nombre de la Empresa 1:</label>
+                                            </div>
                                             <div class="input-container">
-                                                <input type="text" id="company-name" name="nombre-empresa" required placeholder="Ejemplo: ABC Corp">
-                                                <i class='bx bx-error-circle'></i>
+                                                <input type="text" id="company-name" name="nombre_de_la_empresa_1" required placeholder="Ejemplo: ABC Corp">
+                                                <i class='bx bx-check'></i>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
+
                                         <div class="form-group boss">
-                                            <label for="boss">Jefe Directo:</label>
+                                            <div class="label-container">
+                                                <label for="boss">Jefe Directo:</label>
+                                            </div>
                                             <div class="input-container">
-                                                <input type="text" id="boss" name="jefe-directo" required placeholder="Ejemplo: María González">
-                                                <i class='bx bx-error-circle'></i>
+                                                <input type="text" id="boss" name="jefe_directo" required placeholder="Ejemplo: María González">
+                                                <i class='bx bx-check'></i>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
+
                                         <div class="form-group contact-phone">
-                                            <label for="contact-phone">Teléfono de Contacto:</label>
+                                            <div class="label-container">
+                                                <label for="contact-phone">Teléfono de Contacto:</label>
+                                            </div>
                                             <div class="input-container">
-                                                <input type="tel" id="contact-phone" name="telefono-contacto" required placeholder="Ejemplo: (123) 456-7890">
-                                                <i class='bx bx-error-circle'></i>
+                                                <input type="tel" id="contact-phone" name="telefono_de_contacto" required placeholder="Ejemplo: (123) 456-7890">
+                                                <i class='bx bx-check'></i>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
+
                                         <div class="form-group extension">
-                                            <label for="extension">Extensión:</label>
+                                            <div class="label-container">
+                                                <label for="extension">Extensión:</label>
+                                            </div>
                                             <div class="input-container">
                                                 <input type="text" id="extension" name="extension" required placeholder="Ejemplo: 123">
-                                                <i class='bx bx-error-circle'></i>
+                                                <i class='bx bx-check'></i>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
+
                                     </div>
     
-                                    <div class="contact-info-container step grid-form hidden" id="contact-info-2">
+                                    <div class="contact-info-container step grid-form hidden group-2" >
                                         <div class="form-group company-info">
-                                            <label for="company-name">Nombre de la Empresa 2:</label>
+                                            <div class="label-container">
+                                                <label for="company-name-2">Nombre de la Empresa 2:</label>
+                                            </div>
                                             <div class="input-container">
-                                                <input type="text" id="company-name-2" name="nombre-empresa-2" required placeholder="Ejemplo: ABC Corp">
-                                                <i class='bx bx-error-circle'></i>
+                                                <input type="text" id="company-name-2" name="nombre_de_la_empresa_2" required placeholder="Ejemplo: ABC Corp">
+                                                <i class='bx bx-check'></i>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
+
                                         <div class="form-group boss">
-                                            <label for="boss">Jefe Directo:</label>
+                                            <div class="label-container">
+                                                <label for="boss">Jefe Directo:</label>
+                                            </div>
                                             <div class="input-container">
-                                                <input type="text" id="boss" name="jefe-directo-2" required placeholder="Ejemplo: María González">
-                                                <i class='bx bx-error-circle'></i>
+                                                <input type="text" id="boss" name="jefe_directo_2" required placeholder="Ejemplo: María González">
+                                                <i class='bx bx-check'></i>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
+
                                         <div class="form-group contact-phone">
-                                            <label for="contact-phone">Teléfono de Contacto:</label>
+                                            <div class="label-container">
+                                                <label for="contact-phone-2">Teléfono de Contacto:</label>
+                                            </div>
                                             <div class="input-container">
-                                                <input type="tel" id="contact-phone-2" name="telefono-contacto-2" required placeholder="Ejemplo: (123) 456-7890">
-                                                <i class='bx bx-error-circle'></i>
+                                                <input type="tel" id="contact-phone-2" name="telefono_de_contacto_2" required placeholder="Ejemplo: (123) 456-7890">
+                                                <i class='bx bx-check'></i>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
+
                                         <div class="form-group extension">
-                                            <label for="extension">Extensión:</label>
+                                            <div class="label-container">
+                                                <label for="extension-2">Extensión:</label>
+                                            </div>
                                             <div class="input-container">
-                                                <input type="text" id="extension-2" name="extension-2" required placeholder="Ejemplo: 123">
-                                                <i class='bx bx-error-circle'></i>
+                                                <input type="text" id="extension-2" name="extension_2" required placeholder="Ejemplo: 123">
+                                                <i class='bx bx-check'></i>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                        
+        
                                     </div>
     
-                                    <div class="contact-info-reference-personnel step hidden grid-form">
+                                    <div class="contact-info-reference-personnel step hidden grid-form group-3">
                                         <div class="form-group first-name">
-                                            <label for="first-name">Nombre (Referencia Personal 1):</label>
+                                            <div class="label-container">
+                                                <label for="first-name-reference">Nombre (Referencia Personal 1)</label>
+                                            </div>
                                             <div class="input-container">
-                                                <input type="text" id="first-name-reference" name="nombre-referencia" required placeholder="Ejemplo: Juan">
-                                                <i class='bx bx-error-circle'></i>
+                                                <input type="text" id="first-name-reference" name="nombre_de_referencia_personal_1" required placeholder="Ejemplo: Juan">
+                                                <i class='bx bx-check'></i>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
+
                                         <div class="form-group last-name">
-                                            <label for="last-name">Apellidos:</label>
+                                            <div class="label-container">
+                                                <label for="last-name-reference">Apellidos</label>
+                                            </div>
                                             <div class="input-container">
-                                                <input type="text" id="last-name-reference" name="apellidos-referencia" required placeholder="Ejemplo: Pérez González">
-                                                <i class='bx bx-error-circle'></i>
+                                                <input type="text" id="last-name-reference" name="apellidos_de_referencia_personal_1" required placeholder="Ejemplo: Pérez González">
+                                                <i class='bx bx-check'></i>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
+
                                         <div class="form-group contact-phone">
-                                            <label for="contact-phone">Teléfono de Contacto:</label>
+                                            <div class="label-container">
+                                                <label for="contact-phone-reference">Teléfono de Contacto</label>
+                                            </div>
                                             <div class="input-container">
-                                                <input type="tel" id="contact-phone-reference" name="telefono-contacto-referencia" required placeholder="Ejemplo: (123) 456-7890">
-                                                <i class='bx bx-error-circle'></i>
+                                                <input type="tel" id="contact-phone-reference" name="telefono_de_contacto_de_referencia_personal_1" required placeholder="Ejemplo: (123) 456-7890">
+                                                <i class='bx bx-check'></i>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
+
                                     </div>
     
-                                    <div class="contact-info-reference-personnel step hidden grid-form">
+                                    <div class="contact-info-reference-personnel step hidden grid-form group-4">
                                         <div class="form-group first-name">
-                                            <label for="first-name">Nombre (Referencia Personal 2):</label>
+                                            <div class="label-container">
+                                                <label for="first-name-reference-2">Nombre (Referencia Personal 2)</label>
+                                            </div>
                                             <div class="input-container">
-                                                <input type="text" id="first-namereference-2" name="nombre-referencia-2" required placeholder="Ejemplo: Juan">
-                                                <i class='bx bx-error-circle'></i>
+                                                <input type="text" id="first-name-reference-2" name="nombre_de_referencia_personal_2" required placeholder="Ejemplo: Juan">
+                                                <i class='bx bx-check'></i>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
+
                                         <div class="form-group last-name">
-                                            <label for="last-name">Apellidos:</label>
+                                            <div class="label-container">
+                                                <label for="last-name-reference-2">Apellidos</label>
+                                            </div>
                                             <div class="input-container">
-                                                <input type="text" id="last-name-reference-2" name="apellidos-referencia-2" required placeholder="Ejemplo: Pérez González">
-                                                <i class='bx bx-error-circle'></i>
+                                                <input type="text" id="last-name-reference-2" name="apellidos_de_referencia_personal_2" required placeholder="Ejemplo: Pérez González">
+                                                <i class='bx bx-check'></i>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
+
                                         <div class="form-group contact-phone">
-                                            <label for="contact-phone">Teléfono de Contacto:</label>
+                                            <div class="label-container">
+                                                <label for="contact-phone-reference-2">Teléfono de Contacto</label>
+                                            </div>
                                             <div class="input-container">
-                                                <input type="tel" id="contact-phone-reference-2" name="telefono-contacto-referencia-2" required placeholder="Ejemplo: (123) 456-7890">
-                                                <i class='bx bx-error-circle'></i>
+                                                <input type="tel" id="contact-phone-reference-2" name="telefono_de_contacto_de_referencia_personal_2" required placeholder="Ejemplo: (123) 456-7890">
+                                                <i class='bx bx-check'></i>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
+
                                     </div>
                                 </div>
                                 <!-- Health section -->
                                 <div class="health-info sections-toggle-form" id="health-information">
-                                    <div class="health-info-details step hidden grid-form grid-form-health">
+                                    <div class="health-info-details step hidden grid-form group-1">
                                         <div class="form-group blood-type">
-                                            <label for="blood-type">Tipo de Sangre:</label>
+                                            <div class="label-container">
+                                                <label for="blood-type">Tipo de Sangre:</label>
+                                            </div>
                                             <div class="input-container">
-                                                <select id="blood-type" name="tipo-sangre" required>
+                                                <select id="blood-type" name="tipo_de_sangre" class="validate-select" required>
+                                                    <option value="" disabled selected>Selecciona una opción</option>
                                                     <option value="A+">A+</option>
                                                     <option value="A-">A-</option>
                                                     <option value="B+">B+</option>
@@ -665,135 +768,218 @@
                                                     <option value="O+">O+</option>
                                                     <option value="O-">O-</option>
                                                 </select>
-                                                <i class='bx bx-error-circle'></i>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                    
                                         <div class="form-group allergies">
-                                            <label for="allergies">Alergias que padece:</label>
+                                            <div class="label-container">
+                                                <label for="allergies">Alergias que padece:</label>
+                                            </div>
                                             <div class="input-container">
                                                 <input type="text" id="allergies" name="alergias" required placeholder="Ejemplo: Polen, Penicilina">
-                                                <i class='bx bx-error-circle'></i>
+                                                <i class='bx bx-check'></i>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                    
-                                        <div class="form-group diabetes">
-                                            <label for="diabetes">¿Tiene diabetes?</label>
+                                        <div class="form-group form-diabetes">
+                                            <div class="label-container">
+                                                <label for="diabetes">¿Tienes diabetes?</label>
+                                            </div>
                                             <div class="input-container">
-                                                <select id="diabetes" name="diabetes" required>
+                                                <select id="diabetes" name="tiene_diabetes" class="validate-select" required>
+                                                    <option value="" disabled selected>Selecciona una opción</option>
                                                     <option value="si">Sí</option>
                                                     <option value="no">No</option>
                                                 </select>
-                                                <i class='bx bx-error-circle'></i>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                    
-                                        <div class="form-group hypertension">
-                                            <label for="hypertension">¿Tiene hipertensión?</label>
+
+                                        <div class="form-group form-hypertension">
+                                            <div class="label-container">
+                                                <label for="hypertension">¿Tienes hipertensión?</label>
+                                            </div>
                                             <div class="input-container">
-                                                <select id="hypertension" name="hipertension" required>
+                                                <select id="hypertension" name="tiene_hipertension" class="validate-select" required>
+                                                    <option value="" disabled selected>Selecciona una opción</option>
                                                     <option value="si">Sí</option>
                                                     <option value="no">No</option>
                                                 </select>
-                                                <i class='bx bx-error-circle'></i>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                    
-                                        <div class="form-group vision">
-                                            <label for="vision">¿Tiene miopía o astigmatismo?</label>
+
+                                        <div class="form-group form-vision">
+                                            <div class="label-container">
+                                                <label for="vision">¿Tienes miopía o astigmatismo?</label>
+                                            </div>
                                             <div class="input-container">
-                                                <select id="vision" name="vision" required>
+                                                <select id="vision" name="tiene_miopia_astigmatismo" class="validate-select" required>
+                                                    <option value="" disabled selected>Selecciona una opción</option>
                                                     <option value="si">Sí</option>
                                                     <option value="no">No</option>
                                                 </select>
-                                                <i class='bx bx-error-circle'></i>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                    
-                                        <div class="form-group motor-difficulty">
-                                            <label for="motor-difficulty">¿Tiene dificultad motriz?</label>
+
+                                        <div class="form-group form-mobility">
+                                            <div class="label-container">
+                                                <label for="mobility">¿Tienes dificultad motriz?</label>
+                                            </div>
                                             <div class="input-container">
-                                                <select id="motor-difficulty" name="dificultad-motriz" required>
+                                                <select id="mobility" name="tiene_dificultad_motriz" class="validate-select" required>
+                                                    <option value="" disabled selected>Selecciona una opción</option>
                                                     <option value="si">Sí</option>
                                                     <option value="no">No</option>
                                                 </select>
-                                                <i class='bx bx-error-circle'></i>
                                             </div>
-                                        </div>
-                                    
-                                        <div class="form-group sports">
-                                            <label for="sports">¿Practica algún deporte?</label>
-                                            <div class="input-container">
-                                                <input type="text" id="sports" name="deporte" placeholder="Ejemplo: Fútbol, Natación" required>
-                                                <i class='bx bx-error-circle'></i>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
                                     </div>
-    
-                                    <div class="health-assessment step hidden grid-form grid-form-health">
+                                    <div class="health-assessment step hidden grid-form group-2">
                                         <div class="form-group health-status">
-                                            <label for="health-status">¿Cómo consideras tu salud?</label>
+                                            <div class="label-container">
+                                                <label for="health-status">¿Cómo consideras tu salud?</label>
+                                            </div>
                                             <div class="input-container">
-                                                <select id="health-status" name="estado-salud" required>
+                                                <select id="health-status" name="estado_de_salud" class="validate-select" required>
                                                     <option value="" disabled selected>Seleccione uno</option>
                                                     <option value="muy-buena">Muy buena</option>
                                                     <option value="buena">Buena</option>
                                                     <option value="regular">Regular</option>
                                                     <option value="no-tan-buena">No tan buena</option>
                                                 </select>
-                                                <i class='bx bx-error-circle'></i>
                                             </div>
-                                        </div>
-                                    
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
+                                            </div>
+                                        </div>                                    
                                         <div class="form-group chronic-illness">
-                                            <label for="chronic-illness">¿Has padecido alguna enfermedad crónica?</label>
+                                            <div class="label-container">
+                                                <label for="chronic-illness">¿Has padecido alguna enfermedad crónica?</label>
+                                            </div>
                                             <div class="input-container">
-                                                <input type="text" id="chronic-illness" name="enfermedad-cronica" required placeholder="Especificar enfermedad crónica si aplica">
-                                                <i class='bx bx-error-circle'></i>
+                                                <select id="chronic-illness" name="enfermedad_cronica" class="validate-select validate-select-opt" required>
+                                                    <option value="no">No</option>
+                                                    <option value="si">Sí</option>
+                                                </select>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                    
-                                        <div class="form-group">
-                                            <label for="covid-recent">¿Has padecido COVID-19 en los últimos 6 meses?</label>
+                                        <div class="form-group chronic-illness-espc">
+                                            <div class="label-container">
+                                                <label for="chronic-illness-espc">Especifica la enfermedad cronica</label>
+                                            </div>
                                             <div class="input-container">
-                                                <select id="covid-recent" name="covid-reciente" required>
-                                                    <option value="" disabled selected>Seleccione uno</option>
+                                                <input type="text" id="enfermedad-cronica-especificar" name="enfermedad_cronica_especificar" required placeholder="Especificar enfermedad crónica si aplica">
+                                                <i class='bx bx-check'></i>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
+                                            </div>
+                                        </div>
+                                        <div class="form-group covid-19">
+                                            <div class="label-container">
+                                                <label for="covid-19">¿Has padecido COVID-19 en los últimos 6 meses?</label>
+                                            </div>
+                                            <div class="input-container">
+                                                <input type="text" id="covid-19-especificar" name="covid_19_especificar" required placeholder="Especificar detalles si aplica">
+                                                <i class='bx bx-check'></i>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
+                                            </div>
+                                        </div>
+                                        <div class="form-group covid-vaccination">
+                                            <div class="label-container">
+                                                <label for="covid-vaccination">¿Estás vacunado contra COVID-19?</label>
+                                            </div>
+                                            <div class="input-container">
+                                                <select id="covid-vaccination" name="covid_vaccination" class="validate-select" required>
+                                                    <option value="" disabled selected>Selecciona una opción</option>
                                                     <option value="si">Sí</option>
                                                     <option value="no">No</option>
                                                 </select>
-                                                <i class='bx bx-error-circle'></i>
                                             </div>
-                                        </div>
-                                    
-                                        <div class="form-group">
-                                            <label for="covid-vaccine">¿Estás vacunado contra el COVID-19?</label>
-                                            <div class="input-container">
-                                                <select id="covid-vaccine" name="vacuna-covid" required>
-                                                    <option value="" disabled selected>Seleccione uno</option>
-                                                    <option value="si">Sí</option>
-                                                    <option value="no">No</option>
-                                                </select>
-                                                <i class='bx bx-error-circle'></i>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
                                     </div>
-    
-                                    <div class="health-assessment-2 step hidden grid-form">
-                                        <div class="form-group current-medication">
-                                            <label for="current-medication">¿Estás tomando algún medicamento actualmente?</label>
+                                    <div class="health-assessment-2 step hidden grid-form group-3">
+                                        <div class="form-group medication">
+                                            <div class="label-container">
+                                                <label for="medication">¿Estás tomando algún medicamento actualmente?</label>
+                                            </div>
                                             <div class="input-container">
-                                                <input type="text" id="current-medication" name="medicamento-actual" required placeholder="Especificar medicamento si aplica">
-                                                <i class='bx bx-error-circle'></i>
+                                                <select id="medication" name="medication" class="validate-select validate-select-opt" required>
+                                                    <option value="" disabled selected>Selecciona una opción</option>
+                                                    <option value="si">Sí</option>
+                                                    <option value="no">No</option>
+                                                </select>
+                                                <input type="hidden" id="optionSelected" required>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
+                                            </div>
+                                        </div>
+                                        <div class="form-group medication-details">
+                                            <div class="label-container">
+                                                <label for="medication-details">Especifica cuál medicamento estás tomando:</label>
+                                            </div>
+                                            <div class="input-container">
+                                                <input type="text" id="medication-details" name="medication_details" required placeholder="Ejemplo: Ibuprofeno">
+                                                <i class='bx bx-check'></i>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
                                         <div class="form-group medical-appointment">
-                                            <label for="medical-appointment">¿Tienes alguna cita médica programada?</label>
+                                            <div class="label-container">
+                                                <label for="has-appointment">¿Tienes alguna cita médica programada?</label>
+                                            </div>
                                             <div class="input-container">
-                                                <input type="text" id="medical-appointment" name="cita-medica" required placeholder="Especificar cita médica si aplica">
-                                                <i class='bx bx-error-circle'></i>
+                                                <select id="has-appointment" name="has_appointment" class="validate-select validate-select-opt" required>
+                                                    <option value="" disabled selected>Selecciona una opción</option>
+                                                    <option value="si">Sí</option>
+                                                    <option value="no">No</option>
+                                                </select>
+                                                <input type="hidden" id="optionSelected" required>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
+                                            </div>
+                                        </div>
+                                        <div class="form-group appointment-date">
+                                            <div class="label-container">
+                                                <label for="appointment-date">Fecha de la cita médica:</label>
+                                            </div>
+                                            <div class="input-container">
+                                                <input type="text" id="appointment-date" name="appointment_date">
+                                                <i class='bx bx-check'></i>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
                                     </div>
+                                    
                                 </div>
                                 <!-- Confirmation section -->
                                 <div class="confirmation-required sections-toggle-form" id="confirmation-required">
@@ -914,12 +1100,14 @@
                 <div class="form-btns-container">
                     <div class="pager-container">
                         <a class="form-btns pager" id="prevButton">
-                            <i class='bx bx-left-arrow-alt arrow'></i>
+                            <!-- <i class='bx bx-left-arrow-alt arrow'></i> -->
+                            <i class='bx bx-chevron-left arrow' ></i>
                             <span>Anterior</span>
                         </a>
                         <a class="form-btns pager" id="nextButton">
                             <span>Siguiente</span>
-                            <i class='bx bx-right-arrow-alt arrow'></i>
+                            <!-- <i class='bx bx-right-arrow-alt arrow'></i> -->
+                            <i class='bx bx-chevron-right arrow'></i>
                         </a>
                     </div>
                     <div class="save-btn-container">
@@ -952,7 +1140,7 @@
                 <div class="panel-item panel-item-title">
                     <div class="title-container">
                         <h2 class="panel-item-title-h2">Formulario Agi Business</h2>
-                        <p class="panel-item-subtitle">Bienvenido al formulario de ingreso, se requiere que completes cada una de las secciones proporcionadas a continuación. Es vital que te asegures de que la información que ingreses esté completa y precisa. Si tienes alguna pregunta, no dudes en ponerte en contacto con nuestro equipo de Recursos Humanos para obtener ayuda.</p>
+                        <p class="panel-item-subtitle">Bienvenido al formulario de ingreso, se requiere que completes cada una de las secciones proporcionadas a continuación. Es vital que te asegures de que la información que ingreses esté completa y precisa. Tu información será tratada con la debida confidencialidad y solo se utilizará con fines internos.</p>
                     </div>
                 </div>
                 <div class="panel-item panel-item-toggle-cards">
@@ -991,6 +1179,8 @@
     <script type="module" src="./assets/js/forms/formResultsUtils.js"></script>
     <script type="module" src="./assets/js/forms/render-buttons/render-buttons.js"></script>
     <script src="./assets/js/forms/validate-form/validationSelected.js"></script>
+    <script src="./assets/js/forms/validate-form/validatedInputRequest.js"></script>
+    <script type="module" src="./assets/js/forms/header-meesages/header-messages.js"></script>
 
 
 

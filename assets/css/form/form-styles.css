@@ -21,11 +21,14 @@
 .input-container input,
 .input-container select{
     width: 100%;
+    font-family: var(--font-fam-primary);
+    font-weight: 500;
     border: .1rem solid var(--border-input);
     border-radius: .4rem;
     padding:1.2rem;
     padding-right: 3rem;
     transition: all 0.3s ease;
+    color: var(--border-input);
 }
 
 
@@ -75,7 +78,7 @@
 
 .arrow {
     font-weight: 600;
-    font-size: 1.6rem;
+    font-size: 2.2rem;
     vertical-align: middle;
 }
 #saveButton{
@@ -97,12 +100,12 @@
 }
 .pager,
 .pager i{
-    color: #737373;
+    color: #a6a6a6;
 }
 .pager:hover, 
 .pager:hover i{
     transition: all .3s ease-in-out;
-    color: #14297a;
+    color: var(--arrow-btns);
 }
 
 .pager:hover .bx-left-arrow-alt{
@@ -131,7 +134,6 @@
 #prevButton,
 #nextButton,
 #saveButton{
-    display: block;
     opacity: 0;
     z-index: -1;
     transition: all .2s ease
@@ -158,3 +160,10 @@ select {
 
 
 /* hidde the input slected */
+
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}

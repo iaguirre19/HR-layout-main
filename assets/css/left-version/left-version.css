@@ -89,13 +89,13 @@
   color: #d7d7d7;
 }
 
-.hidden-toggle{
+/* .hidden-toggle{
   opacity: .4;
   cursor: default;
   user-select: none;
   pointer-events: none;
 
-}
+} */
 .step-completion i{
   color: var(--toggle-icon-dark);
 }
