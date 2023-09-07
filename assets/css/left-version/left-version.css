@@ -6,13 +6,15 @@
     border-radius: 1.8rem;
     color: white;
     display: grid;
-    grid-template-rows: auto auto 1fr auto;
-    row-gap: var(--spacing-sections);
+    grid-template-rows: min-content min-content min-content auto;
+    row-gap: 2.8rem;
     overflow: auto;
+}
+.left-version .panel-item-toggle-cards{
+  height: min-content;
 }
 .panel-item{
     width: 100%;
-    height: auto;
 }
 .panel-item-icon{
     height: 5rem;

@@ -1,0 +1,30 @@
+.panel-item-footer{
+    height: 90%;
+    width: 100%;
+}
+.panel-item-footer{
+    align-self: center;
+}
+.panel-item-footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem 0;
+}
+.footer-panel-container{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2.8rem;
+}
+.component{
+    height: 100%;
+    width: 100%;
+    background-image: url(../../img/vectors/footer/Component-unique.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}

@@ -32,8 +32,8 @@
     height: 4rem;
   }
   .logo-left-panel img{
-    width: 100%;
-    height: 100%;
+    width: 4rem;
+    height: 4rem;
     object-fit: contain;
     grid-column: 2/3;
 }

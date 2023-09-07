@@ -1,30 +1,41 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const selects = document.querySelectorAll(".validate-select-opt");
+  const selects = document.querySelectorAll(".validate-select-opt");
 
-    const validatedInputRequest = (selectInput) => {
-        // console.log(selectInput);
-        if(selectInput.checkValidity()){
-            const value = selectInput.value;
-            const selectMainContainer = selectInput.parentNode.parentNode;
-            // const selectMainContainer = selectInput.parentNode.parentNode;
-            if(value === "si"){
-                const nextElement = selectMainContainer.nextElementSibling;
-                console.log(nextElement);
-                nextElement.classList.add("active")
-            }else{
-                const nextElement = selectMainContainer.nextElementSibling;
-                console.log(nextElement);
-                nextElement.classList.remove("active");
-            }
+  const validatedInputRequest = (selectInput) => {
+    if (selectInput.checkValidity()) {
+      const value = selectInput.value;
+      const selectMainContainer = selectInput.closest(".form-group");
+      const nextElement = selectMainContainer.nextElementSibling;
 
-        }else{
-            return
+      if (value === "si") {
+        if (
+          nextElement.classList.contains("hidden-input") &&
+          nextElement.nextElementSibling &&
+          nextElement.nextElementSibling.classList.contains("hidden-input")
+        ) {
+          nextElement.classList.add("active");
+          nextElement.nextElementSibling.classList.add("active");
+          console.log(nextElement, nextElement.nextElementSibling);
+        } else {
+          nextElement.classList.add("active");
+          console.log(nextElement);
         }
-    };
+      } else {
+        nextElement.classList.remove("active");
+        if (nextElement.nextElementSibling) {
+          nextElement.nextElementSibling.classList.remove("active");
+        }
+        console.log(nextElement, nextElement.nextElementSibling);
+      }
+    } else {
+      return;
+    }
+  };
 
-    selects.forEach((select) => {
-        select.addEventListener("blur", () => {
-            validatedInputRequest(select);
-        });
+
+  selects.forEach((select) => {
+    select.addEventListener("change", () => {
+      validatedInputRequest(select);
     });
+  });
 });

@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="./assets/css/form/health-info.css">
     <link rel="stylesheet" href="./assets/css/form/confirmation-required.css">
     <link rel="stylesheet" href="./assets/css/form/validation-form/validation-form.css">
+    <link rel="stylesheet" href="./assets/css/footer/footer-left.css">
 
     <link rel="stylesheet" href="./assets/css/left-version/left-version.css"`>
     <link rel="stylesheet" href="./assets/css/right-version/right-version.css">
@@ -178,8 +179,6 @@
                                                     <option value="female">Femenino</option>
                                                     <option value="other">Otro</option>
                                                 </select>
-
-                                                
                                             </div>
                                             <div class="error-container">
                                                 <i class='bx bxs-error'></i>
@@ -898,8 +897,11 @@
                                                 <label for="covid-19">¿Has padecido COVID-19 en los últimos 6 meses?</label>
                                             </div>
                                             <div class="input-container">
-                                                <input type="text" id="covid-19-especificar" name="covid_19_especificar" required placeholder="Especificar detalles si aplica">
-                                                <i class='bx bx-check'></i>
+                                                <select id="covid-19" name="has_covid_19" required class="validate-select">
+                                                    <option value="" disabled selected>Selecciona una opción</option>
+                                                    <option value="si">Sí</option>
+                                                    <option value="no">No</option>
+                                                </select>
                                             </div>
                                             <div class="error-container">
                                                 <i class='bx bxs-error'></i>
@@ -932,7 +934,6 @@
                                                     <option value="si">Sí</option>
                                                     <option value="no">No</option>
                                                 </select>
-                                                <input type="hidden" id="optionSelected" required>
                                             </div>
                                             <div class="error-container">
                                                 <i class='bx bxs-error'></i>
@@ -960,7 +961,6 @@
                                                     <option value="si">Sí</option>
                                                     <option value="no">No</option>
                                                 </select>
-                                                <input type="hidden" id="optionSelected" required>
                                             </div>
                                             <div class="error-container">
                                                 <i class='bx bxs-error'></i>
@@ -971,7 +971,7 @@
                                                 <label for="appointment-date">Fecha de la cita médica:</label>
                                             </div>
                                             <div class="input-container">
-                                                <input type="text" id="appointment-date" name="appointment_date">
+                                                <input type="text" id="appointment-date" name="appointment_date" required>
                                                 <i class='bx bx-check'></i>
                                             </div>
                                             <div class="error-container">
@@ -979,119 +979,172 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
                                 </div>
                                 <!-- Confirmation section -->
                                 <div class="confirmation-required sections-toggle-form" id="confirmation-required">
-                                    <div class="important-details step hidden grid-form">
-                                        <div class="form-group studying">
-                                            <label for="studying">¿Actualmente estás estudiando?</label>
+                                    <div class="confirmation-required-1 step hidden grid-form group-1">
+                                        <div class="form-group form-currently-studying">
+                                            <div class="label-container">
+                                                <label for="currently-studying">¿Actualmente estás estudiando?</label>
+                                            </div>
                                             <div class="input-container">
-                                                <select id="studying-select" name="estudiando" required>
-                                                    <option value="" disabled selected>Seleccione uno</option>
+                                                <select id="currently-studying" name="estudias_actualmente" required class="validate-select validate-select-opt">
+                                                    <option value="" disabled selected>Selecciona una opción</option>
                                                     <option value="si">Sí</option>
                                                     <option value="no">No</option>
                                                 </select>
-                                                <i class='bx bx-error-circle'></i>
+                                                <input type="hidden" id="current-schedule" name="horario_escolar" required placeholder="Especificar horario si aplica">
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                    
-                                        <div class="form-group school-schedule">
-                                            <label for="school-schedule">¿Cuál es tu horario escolar?</label>
+                                        <div class="form-group form-grade-level hidden-input">
+                                            <div class="label-container">
+                                                <label for="grade-level">¿En qué grado escolar estás cursando?</label>
+                                            </div>
                                             <div class="input-container">
-                                                <input type="text" id="school-schedule" name="horario-escolar" placeholder="Especificar horario escolar si aplica" required>
-                                                <i class='bx bx-error-circle'></i>
+                                                <input type="text" id="grade-level" name="grado_escolar" required placeholder="Ejemplo: 9°">
+                                                <i class='bx bx-check'></i>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                    
-                                        <div class="form-group school-grade">
-                                            <label for="school-grade">¿Qué grado escolar estás cursando?</label>
+                                        <div class="form-group form-schedule both hidden-input">
+                                            <div class="label-container">
+                                                <label for="schedule">Escribe tu horario escolar:</label>
+                                            </div>
                                             <div class="input-container">
-                                                <input type="text" id="school-grade" name="grado-escolar" placeholder="Especificar grado escolar si aplica" required>
-                                                <i class='bx bx-error-circle'></i>
+                                                <input type="text" id="schedule" name="horario_escolar" required placeholder="Ejemplo: Lunes a Viernes de 8:00 AM a 2:00 PM">
+                                                <i class='bx bx-check'></i>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
                                     </div>
-    
-                                    <div class="travel-details step hidden grid-form">
-                                        <div class="form-group upcoming-event">
-                                            <label for="upcoming-event">¿Tienes algún evento o viaje programado para los próximos meses?</label>
+                                    <div class="confirmation-required-2 step hidden grid-form group-2">
+                                        <div class="form-group form-event">
+                                            <div class="label-container">
+                                                <label for="event">¿Tienes algún evento o viaje programado para los próximos meses?</label>
+                                            </div>
                                             <div class="input-container">
-                                                <select id="upcoming-event" name="evento-programado" required>
-                                                    <option value="" disabled selected>Seleccione uno</option>
+                                                <select id="event" name="evento_programado" class="validate-select validate-select-opt" required>
+                                                    <option value="" disabled selected>Selecciona una opción</option>
                                                     <option value="si">Sí</option>
                                                     <option value="no">No</option>
                                                 </select>
-                                                <i class='bx bx-error-circle'></i>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                    
-                                        <div class="form-group event-details">
-                                            <label for="event-details">Fecha y motivo de este evento:</label>
+
+                                        <div class="form-group form-event-date hidden-input">
+                                            <div class="label-container">
+                                                <label for="event-date">Fecha del evento:</label>
+                                            </div>
                                             <div class="input-container">
-                                                <input type="text" id="event-details" name="detalles-evento" placeholder="Especificar detalles del evento si aplica" required>
-                                                <i class='bx bx-error-circle'></i>
+                                                <input type="date" id="event-date" name="fecha_evento" required>
+                                                <i class='bx bx-check'></i>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                    
-                                        <div class="form-group transportation">
-                                            <label for="transportation">¿Cuál es tu medio de transporte?</label>
+
+                                        <div class="form-group form-event-reason both hidden-input">
+                                            <div class="label-container">
+                                                <label for="event-reason">Motivo del evento:</label>
+                                            </div>
                                             <div class="input-container">
-                                                <select id="transportation" name="medio-transporte" required>
-                                                    <option value="" disabled selected>Seleccione uno</option>
-                                                    <option value="auto">Auto</option>
+                                                <input type="text" id="event-reason" name="motivo_evento" required placeholder="Especifica el motivo del evento">
+                                                <i class='bx bx-check'></i>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
+                                            </div>
+                                        </div>
+                                    </div>                                
+                                    <div class="confirmation-required-3 step hidden grid-form group-3">
+                                        <div class="form-group form-transportation">
+                                            <div class="label-container">
+                                                <label for="transportation">Medio de transporte:</label>
+                                            </div>
+                                            <div class="input-container">
+                                                <select id="transportation" name="medio_de_transporte" class="validate-select validate-select-opt" required>
+                                                    <option value="" disabled selected>Selecciona una opción</option>
+                                                    <option value="automóvil">Automóvil</option>
+                                                    <option value="transporte público">Transporte público</option>
                                                     <option value="bicicleta">Bicicleta</option>
-                                                    <option value="transporte-publico">Transporte Público</option>
                                                     <option value="caminando">Caminando</option>
                                                 </select>
-                                                <i class='bx bx-error-circle'></i>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                    
-                                        <div class="form-group commute-time">
-                                            <label for="commute-time">¿Cuánto tiempo haces de tu casa a esta ubicación?</label>
+                                        <div class="form-group form-commute-time">
+                                            <div class="label-container">
+                                                <label for="commute-time">Tiempo de desplazamiento desde tu casa:</label>
+                                            </div>
                                             <div class="input-container">
-                                                <input type="text" id="commute-time" name="tiempo-traslado" placeholder="Especificar tiempo de traslado si aplica" required>
-                                                <i class='bx bx-error-circle'></i>
+                                                <input type="text" id="commute-time" name="tiempo_de_desplazamiento" required placeholder="Ejemplo: 30 minutos">
+                                                <i class='bx bx-check'></i>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                    </div>
-    
-                                    <div class="sales-experience step hidden grid-form">
-                                        <div class="form-group sales-experience">
-                                            <label for="sales-experience">¿Tienes experiencia en ventas?</label>
+                                    </div>                                                                
+                                    <div class="confirmation-required-4 step hidden grid-form group-4">
+                                        <div class="form-group form-sales-experience">
+                                            <div class="label-container">
+                                                <label for="sales-experience">¿Tienes experiencia en ventas?</label>
+                                            </div>
                                             <div class="input-container">
-                                                <select id="sales-experience" name="experiencia-ventas" required>
-                                                    <option value="" disabled selected>Seleccione uno</option>
+                                                <select id="sales-experience" name="experiencia_en_ventas" required class="validate-select validate-select-opt">
+                                                    <option value="" disabled selected>Selecciona una opción</option>
                                                     <option value="si">Sí</option>
                                                     <option value="no">No</option>
                                                 </select>
-                                                <i class='bx bx-error-circle'></i>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                    
-                                        <div class="form-group availability">
-                                            <label for="availability">Disponibilidad de horario:</label>
+                                        <div class="form-group form-sales-experience-type">
+                                            <div class="label-container">
+                                                <label for="sales-experience-type">Especifica el tipo de experiencia en ventas:</label>
+                                            </div>
                                             <div class="input-container">
-                                                <input type="text" id="availability" name="disponibilidad-horario" placeholder="Especificar disponibilidad de horario si aplica" required>
-                                                <i class='bx bx-error-circle'></i>
+                                                <input type="text" id="sales-experience-type" name="tipo_de_experiencia_en_ventas" placeholder="Ejemplo: Ventas minoristas, ventas B2B, ventas por teléfono, etc." required>
+                                                <i class='bx bx-check'></i>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                    
-                                        <div class="form-group english-level">
-                                            <label for="english-level">Nivel de inglés:</label>
+                                        <div class="form-group form-english-level">
+                                            <div class="label-container">
+                                                <label for="english-level">Nivel de inglés:</label>
+                                            </div>
                                             <div class="input-container">
-                                                <select id="english-level" name="nivel-ingles" required>
-                                                    <option value="" disabled selected>Seleccione uno</option>
+                                                <select id="english-level" name="nivel_de_ingles" required class="validate-select validate-select-opt">
+                                                    <option value="" disabled selected>Selecciona tu nivel</option>
                                                     <option value="basico">Básico</option>
                                                     <option value="intermedio">Intermedio</option>
                                                     <option value="avanzado">Avanzado</option>
                                                     <option value="fluido">Fluido</option>
+                                                    <option value="nativo">Nativo</option>
                                                 </select>
-                                                <i class='bx bx-error-circle'></i>
+                                            </div>
+                                            <div class="error-container">
+                                                <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> 
                                 </div>
                             </div>
                         </form>
@@ -1168,6 +1221,13 @@
                     </div>
                 </div>
                 <div class="panel-item panel-item-footer">
+                    <div class="footer-panel-container">
+                        <div class="component"></div>
+                        <div class="component"></div>
+                        <div class="component"></div>
+                        <div class="component"></div>
+                        <div class="component"></div>
+                    </div>
                 </div>
             </div>
         </section>

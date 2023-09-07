@@ -1,9 +1,18 @@
-/* .important-details .form-group{
-    grid-column: 1/5;
+.confirmation-required .group-1 > *,
+.confirmation-required .group-2 > *,
+.confirmation-required .group-3 > *,
+.confirmation-required .group-4 > *{
+    grid-column: 1/3;
 }
-.travel-details .form-group{
-    grid-column: 1/5;
+
+.hidden-input{
+    display: none;
+    opacity: 0;
+    z-index: -1;
 }
-.sales-experience .form-group{
-    grid-column: 1/5;
-} */
+.hidden-input.active{
+    display: block;
+    opacity: 1;
+    z-index: 2;
+    transition: all .3s ease-in-out;
+}

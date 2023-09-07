@@ -106,10 +106,13 @@ function validateAndMarkAsComplete(element) {
   const requiredInputs = element.querySelectorAll(
     ".input-container input[required]"
   );
+
+  console.log(requiredInputs)
   const allFieldsValid = [...requiredInputs].every(
     (input) => input.value !== ""
   );
 
+  console.log(allFieldsValid)
   if (allFieldsValid) {
     markAsComplete(element);
     checkSiblingsComplete(element); 

@@ -11,21 +11,22 @@ document.addEventListener("DOMContentLoaded", () => {
                 valid = false
             }else{
                 valid = true
+                const valueSelect = select
                 const container = select.parentElement.parentNode;
-                validateAndStyleSelect(container, valid);
+                validateAndStyleSelect(container, valid, valueSelect);
             }
         })
     })
 
 
-    const validateAndStyleSelect = (container, valid) => {
-        const inputContainer = container.querySelector(".input-container")
-
+    const validateAndStyleSelect = (container, valid, valueSelect) => {
+        const inputContainer = container.querySelector(".input-container").parentElement;
         if(!valid){
             inputContainer.classList.remove("valid");
             container.classList.remove("active-check");
             container.classList.add("active-error");
         }else{
+            // console.log(valueSelect.value)
             inputContainer.classList.add("valid");
             container.classList.remove("active-error");
             container.classList.add("active-check");
