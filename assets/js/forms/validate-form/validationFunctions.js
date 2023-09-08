@@ -22,23 +22,52 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+// export const isAllChildrenValid = (element) => {
+//   const children = element.children;
+//   let inputIncomplete = [];
+
+//   for (let i = 0; i < children.length; i++) {
+//     const child = children[i];
+//     if (!child.classList.contains("valid")) {
+//       inputIncomplete.push(child);
+//     }
+//   }
+
+//   if (inputIncomplete.length === 0) {
+//     return true; // Todos los hijos tienen la clase "valid"
+//   } else {
+//     return inputIncomplete;
+//   }
+// };
+
+
+
 export const isAllChildrenValid = (element) => {
   const children = element.children;
   let inputIncomplete = [];
 
   for (let i = 0; i < children.length; i++) {
     const child = children[i];
-    if (!child.classList.contains("valid")) {
+    const estilo = window.getComputedStyle(child);
+
+    // Verificar si el elemento hijo es visible (display diferente de "none")
+    if (
+      estilo.getPropertyValue("display") !== "none" &&
+      !child.classList.contains("valid")
+    ) {
       inputIncomplete.push(child);
     }
   }
 
   if (inputIncomplete.length === 0) {
-    return true; // Todos los hijos tienen la clase "valid"
+    return true; // Todos los hijos visibles tienen la clase "valid"
   } else {
     return inputIncomplete;
   }
 };
+
+
+
 
 
 

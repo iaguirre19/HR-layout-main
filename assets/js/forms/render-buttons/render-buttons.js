@@ -109,6 +109,7 @@ function changePage(action) {
 
 function checkSiblingsComplete(element) {
   const siblings = Array.from(element.parentElement.children);
+  console.log(siblings)
 
   if (siblings.every((sibling) => sibling.classList.contains("complete"))) {
     const toggleContainer = getGlobalData().containerToggle;
@@ -195,8 +196,9 @@ function savePageSection() {
   const lastPosition = currentPosition[currentPosition.length - 1];
   const isAllComplete = isAllChildrenValid(lastPosition);
   if(isAllComplete === true){
-    checkSiblingsComplete(lastPosition);
     markAsComplete(lastPosition);
+    checkSiblingsComplete(lastPosition);
+    validateAndToggleSibling()
   }else{
     const inputEmpty = inputIncomplete(isAllComplete)
   }
