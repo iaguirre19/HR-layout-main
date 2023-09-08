@@ -1,8 +1,15 @@
-document.addEventListener("DOMContentLoaded", () => {
+import { displayErrorMessages } from "./validateErrorMessages.js";
 
+document.addEventListener("DOMContentLoaded", () => {
   const inputs = document.querySelectorAll("input");
   const selects = document.querySelectorAll("select");
-
+  const numberInputs = document.querySelectorAll('input[type="number"]');
+  // Validation for inputs number
+  numberInputs.forEach((input) => {
+    input.addEventListener("input", function () {
+      this.value = this.value.replace(/[^0-9]/g, "");
+    });
+  });
 
   inputs.forEach((input) => {
     input.value = "";
@@ -35,26 +42,31 @@ export function validateInputs(content) {
               );
               this.value = formattedValue;
             } else {
-              this.value = cleanedValue.slice(0, 10);
+              this.value = cleanedValue
+                .slice(0, 10)
+                .replace(/^(\d{0,3})(\d{0,3})(\d{0,4})$/, "($1) $2-$3");
+            }
+
+            // Añade este código para manejar el caso de borrado
+            if (cleanedValue.length === 0) {
+              this.value = "";
             }
           });
         }
       });
     });
   };
-
   clickOnInput(inputs);
 
-  const createErrorMessage = (inputContainer) => {
+  const createErrorMessage = (inputContainer, message) => {
     const errCont = inputContainer.querySelector(".error-container");
-
     if (!errCont.querySelector(".error-message")) {
       const labelContainer = inputContainer.querySelector(".label-container");
       const labelElement = labelContainer.querySelector("label");
       const labelText = labelElement.textContent;
       const errorMessage = document.createElement("span");
       errorMessage.className = "error-message";
-      errorMessage.textContent = `Por favor ingresa tu ${labelText}`;
+      errorMessage.textContent = message;
       errCont.appendChild(errorMessage);
     }
   };
@@ -75,9 +87,10 @@ export function validateInputs(content) {
       mainContainer.classList.add("invalid");
       mainContainer.classList.remove("active-check");
       mainContainer.classList.add("active-error");
-      createErrorMessage(mainContainer, errorContainer);
+      const errorMessage = displayErrorMessages(input)
+      createErrorMessage(mainContainer, errorMessage);
     }
-  };
+  };  
 
   inputs.forEach((input) => {
     input.addEventListener("blur", handleInputBlur);

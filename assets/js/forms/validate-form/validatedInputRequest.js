@@ -15,17 +15,14 @@ document.addEventListener("DOMContentLoaded", () => {
         ) {
           nextElement.classList.add("active");
           nextElement.nextElementSibling.classList.add("active");
-          console.log(nextElement, nextElement.nextElementSibling);
         } else {
           nextElement.classList.add("active");
-          console.log(nextElement);
         }
       } else {
         nextElement.classList.remove("active");
         if (nextElement.nextElementSibling) {
           nextElement.nextElementSibling.classList.remove("active");
         }
-        console.log(nextElement, nextElement.nextElementSibling);
       }
     } else {
       return;

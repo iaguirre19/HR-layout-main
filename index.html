@@ -102,7 +102,7 @@
                                                 <label for="name">Nombre</label>
                                             </div>
                                             <div class="input-container">
-                                                <input type="text" id="name" name="name" required placeholder="Ejemplo: Fabiola">
+                                                <input type="text" id="name" name="nombre" required placeholder="Ejemplo: Fabiola">
                                                 <i class='bx bx-check'></i>
                                             </div>
                                             <div class="error-container">
@@ -114,7 +114,7 @@
                                                 <label for="last-name">Apellido Paterno</label>
                                             </div>
                                             <div class="input-container">
-                                                <input type="text" id="last-name" name="last-name" required placeholder="Ejemplo: Pérez">
+                                                <input type="text" id="last-name" name="apellido_paterno" required placeholder="Ejemplo: Pérez">
                                                 <i class='bx bx-check'></i>
                                             </div>
                                             <div class="error-container">
@@ -189,7 +189,7 @@
                                                 <label for="age">Edad</label>
                                             </div>
                                             <div class="input-container">
-                                                <input type="text" id="age" name="edad" required placeholder="Ejemplo: 30">
+                                                <input type="number" id="age" name="edad" required placeholder="Ejemplo: 30">
                                                 <i class='bx bx-check'></i>
                                             </div>
                                             <div class="error-container">
@@ -507,7 +507,7 @@
                                                 <label for="first-name">Nombre</label>
                                             </div>
                                             <div class="input-container">
-                                                <input type="text" id="first-name" name="nombre" required placeholder="Ejemplo: Juan">
+                                                <input type="text" id="first-name" name="nombre_contacto" required placeholder="Ejemplo: Juan">
                                                 <i class='bx bx-check'></i>
                                             </div>
                                             <div class="error-container">
@@ -519,7 +519,7 @@
                                                 <label for="referal-last-name">Apellido</label>
                                             </div>
                                             <div class="input-container">
-                                                <input type="text" id="referal-last-name" name="apellido" required placeholder="Ejemplo: Pérez">
+                                                <input type="text" id="referal-last-name" name="apellido_contacto" required placeholder="Ejemplo: Pérez">
                                                 <i class='bx bx-check'></i>
                                             </div>
                                             <div class="error-container">
@@ -543,7 +543,7 @@
                                                 <label for="relationship">Parentesco</label>
                                             </div>
                                             <div class="input-container">
-                                                <input type="text" id="relationship" name="parentesco" required placeholder="Ejemplo: Padre">
+                                                <input type="text" id="relationship" name="parentesco_contacto" required placeholder="Ejemplo: Padre">
                                                 <i class='bx bx-check'></i>
                                             </div>
                                             <div class="error-container">
@@ -697,48 +697,6 @@
                                             </div>
                                             <div class="input-container">
                                                 <input type="tel" id="contact-phone-reference" name="telefono_de_contacto_de_referencia_personal_1" required placeholder="Ejemplo: (123) 456-7890">
-                                                <i class='bx bx-check'></i>
-                                            </div>
-                                            <div class="error-container">
-                                                <i class='bx bxs-error'></i>
-                                            </div>
-                                        </div>
-
-                                    </div>
-    
-                                    <div class="contact-info-reference-personnel step hidden grid-form group-4">
-                                        <div class="form-group first-name">
-                                            <div class="label-container">
-                                                <label for="first-name-reference-2">Nombre (Referencia Personal 2)</label>
-                                            </div>
-                                            <div class="input-container">
-                                                <input type="text" id="first-name-reference-2" name="nombre_de_referencia_personal_2" required placeholder="Ejemplo: Juan">
-                                                <i class='bx bx-check'></i>
-                                            </div>
-                                            <div class="error-container">
-                                                <i class='bx bxs-error'></i>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group last-name">
-                                            <div class="label-container">
-                                                <label for="last-name-reference-2">Apellidos</label>
-                                            </div>
-                                            <div class="input-container">
-                                                <input type="text" id="last-name-reference-2" name="apellidos_de_referencia_personal_2" required placeholder="Ejemplo: Pérez González">
-                                                <i class='bx bx-check'></i>
-                                            </div>
-                                            <div class="error-container">
-                                                <i class='bx bxs-error'></i>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group contact-phone">
-                                            <div class="label-container">
-                                                <label for="contact-phone-reference-2">Teléfono de Contacto</label>
-                                            </div>
-                                            <div class="input-container">
-                                                <input type="tel" id="contact-phone-reference-2" name="telefono_de_contacto_de_referencia_personal_2" required placeholder="Ejemplo: (123) 456-7890">
                                                 <i class='bx bx-check'></i>
                                             </div>
                                             <div class="error-container">
@@ -929,7 +887,7 @@
                                                 <label for="medication">¿Estás tomando algún medicamento actualmente?</label>
                                             </div>
                                             <div class="input-container">
-                                                <select id="medication" name="medication" class="validate-select validate-select-opt" required>
+                                                <select id="medication" name="medicacion" class="validate-select validate-select-opt" required>
                                                     <option value="" disabled selected>Selecciona una opción</option>
                                                     <option value="si">Sí</option>
                                                     <option value="no">No</option>
@@ -944,7 +902,7 @@
                                                 <label for="medication-details">Especifica cuál medicamento estás tomando:</label>
                                             </div>
                                             <div class="input-container">
-                                                <input type="text" id="medication-details" name="medication_details" required placeholder="Ejemplo: Ibuprofeno">
+                                                <input type="text" id="medication-details" name="tomar_medicamento" required placeholder="Ejemplo: Ibuprofeno">
                                                 <i class='bx bx-check'></i>
                                             </div>
                                             <div class="error-container">
@@ -956,7 +914,7 @@
                                                 <label for="has-appointment">¿Tienes alguna cita médica programada?</label>
                                             </div>
                                             <div class="input-container">
-                                                <select id="has-appointment" name="has_appointment" class="validate-select validate-select-opt" required>
+                                                <select id="has-appointment" name="cita_programada" class="validate-select validate-select-opt" required>
                                                     <option value="" disabled selected>Selecciona una opción</option>
                                                     <option value="si">Sí</option>
                                                     <option value="no">No</option>
@@ -968,11 +926,10 @@
                                         </div>
                                         <div class="form-group appointment-date">
                                             <div class="label-container">
-                                                <label for="appointment-date">Fecha de la cita médica:</label>
+                                                <label for="appointment-date">Fecha de la cita médica</label>
                                             </div>
                                             <div class="input-container">
-                                                <input type="text" id="appointment-date" name="appointment_date" required>
-                                                <i class='bx bx-check'></i>
+                                                <input type="date" id="appointment-date" name="fecha_cita" required>
                                             </div>
                                             <div class="error-container">
                                                 <i class='bx bxs-error'></i>
@@ -1047,7 +1004,6 @@
                                             </div>
                                             <div class="input-container">
                                                 <input type="date" id="event-date" name="fecha_evento" required>
-                                                <i class='bx bx-check'></i>
                                             </div>
                                             <div class="error-container">
                                                 <i class='bx bxs-error'></i>
@@ -1114,7 +1070,7 @@
                                                 <i class='bx bxs-error'></i>
                                             </div>
                                         </div>
-                                        <div class="form-group form-sales-experience-type">
+                                        <div class="form-group form-sales-experience-type hidden-input">
                                             <div class="label-container">
                                                 <label for="sales-experience-type">Especifica el tipo de experiencia en ventas:</label>
                                             </div>
@@ -1131,7 +1087,7 @@
                                                 <label for="english-level">Nivel de inglés:</label>
                                             </div>
                                             <div class="input-container">
-                                                <select id="english-level" name="nivel_de_ingles" required class="validate-select validate-select-opt">
+                                                <select id="english-level" name="nivel_de_ingles" required class="validate-select">
                                                     <option value="" disabled selected>Selecciona tu nivel</option>
                                                     <option value="basico">Básico</option>
                                                     <option value="intermedio">Intermedio</option>

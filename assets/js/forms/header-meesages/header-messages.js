@@ -1,5 +1,3 @@
-
-
 const messages = [
   {
     part: "data-personal",
@@ -45,11 +43,8 @@ const messages = [
     groups: [
       {
         name: "group-1",
-        message: "Mensaje para el Grupo 1 de Additional Data",
-      },
-      {
-        name: "group-2",
-        message: "Mensaje para el Grupo 2 de Additional Data",
+        message:
+          "Por favor, proporcione información de contacto en caso de situaciones de emergencia",
       },
     ],
   },
@@ -58,11 +53,18 @@ const messages = [
     groups: [
       {
         name: "group-1",
-        message: "Mensaje para el Grupo 1 de Contact Information",
+        message:
+          "Por favor, proporciona referencias laborales de tus dos empleos anteriores para ayudarnos a conocer mejor tu experiencia profesional",
       },
       {
         name: "group-2",
-        message: "Mensaje para el Grupo 2 de Contact Information",
+        message:
+          "Asimismo, te agradeceríamos que nos proporcionaras una referencia laboral de tu segundo empleo anterior para obtener una visión más completa de tu historial profesional",
+      },
+      {
+        name: "group-3",
+        message:
+          "Por favor, comparte los detalles de contacto de una referencia personal que pueda proporcionarnos información sobre tu carácter y habilidades personales",
       },
     ],
   },
@@ -71,11 +73,18 @@ const messages = [
     groups: [
       {
         name: "group-1",
-        message: "Mensaje para el Grupo 1 de Health Information",
+        message:
+          "Por favor, proporciona información relevante acerca de tu estado de salud. Esta información nos será útil para poder ofrecerte un espacio laboral adecuado y brindarte el mejor apoyo posible.",
       },
       {
         name: "group-2",
-        message: "Mensaje para el Grupo 2 de Health Information",
+        message:
+          "Por favor, proporciona detalles adicionales sobre tu estado de salud, incluyendo si has recibido la vacuna contra el COVID-19",
+      },
+      {
+        name: "group-3",
+        message:
+          "Adicionalmente, te agradeceríamos que nos informaras si estás tomando algún medicamento en la actualidad o si tienes programado algún compromiso médico en el futuro",
       },
     ],
   },
@@ -84,11 +93,23 @@ const messages = [
     groups: [
       {
         name: "group-1",
-        message: "Mensaje para el Grupo 1 de Confirmation Required",
+        message:
+          "Por favor, comparte detalles sobre tu educación actual si es relevante para la posición o situación en cuestión. Incluye información sobre el nivel de estudios, la institución académica, el campo de estudio y cualquier dato pertinente a tu formación académica actual.",
       },
       {
         name: "group-2",
-        message: "Mensaje para el Grupo 2 de Confirmation Required",
+        message:
+          "Por favor, infórmanos si tienes algún evento o viaje programado en los próximos meses para que podamos tenerlo en cuenta en la planificación laboral",
+      },
+      {
+        name: "group-3",
+        message:
+          "Por favor, proporciona detalles sobre el medio de transporte que utilizas habitualmente para llegar a la oficina, así como el tiempo estimado que sueles tardar en tu trayecto diario",
+      },
+      {
+        name: "group-4",
+        message:
+          "Por favor, indícanos si tienes experiencia previa en ventas y tu nivel de competencia en el idioma inglés.",
       },
     ],
   },
@@ -116,8 +137,6 @@ export function showMessageHeader(mainSection) {
             }
         }
     }
-
-    // Seguir con el regreso que seria el group en string
     const message = messages.find(msg => msg.part === partId);
     
     if(message){

@@ -4,29 +4,27 @@ document.addEventListener("DOMContentLoaded", () => {
     let valid = true;
 
     selectInputs.forEach((select) => {
-        select.addEventListener("blur", () => {
+        select.addEventListener("change", () => {
             if(!select.checkValidity()){
                 const container = select.parentElement.parentNode;
                 validateAndStyleSelect(container, valid);
                 valid = false
             }else{
                 valid = true
-                const valueSelect = select
                 const container = select.parentElement.parentNode;
-                validateAndStyleSelect(container, valid, valueSelect);
+                validateAndStyleSelect(container, valid);
             }
         })
     })
 
 
-    const validateAndStyleSelect = (container, valid, valueSelect) => {
+    const validateAndStyleSelect = (container, valid) => {
         const inputContainer = container.querySelector(".input-container").parentElement;
         if(!valid){
             inputContainer.classList.remove("valid");
             container.classList.remove("active-check");
             container.classList.add("active-error");
         }else{
-            // console.log(valueSelect.value)
             inputContainer.classList.add("valid");
             container.classList.remove("active-error");
             container.classList.add("active-check");

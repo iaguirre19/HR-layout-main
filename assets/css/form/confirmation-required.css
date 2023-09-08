@@ -5,6 +5,14 @@
     grid-column: 1/3;
 }
 
+.confirmation-required .group-4 .form-sales-experience-type{
+    grid-row: 3/4;
+}
+.confirmation-required .group-4 .form-sales-experience-type.active{
+    grid-row: 2/3;
+}
+
+
 .hidden-input{
     display: none;
     opacity: 0;
@@ -15,4 +23,7 @@
     opacity: 1;
     z-index: 2;
     transition: all .3s ease-in-out;
+}
+.form-event-date .input-container input{
+    padding-right: 1.2rem;
 }

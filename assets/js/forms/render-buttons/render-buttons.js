@@ -121,20 +121,22 @@ function validateAndMarkAsComplete(element) {
   }
 }
 
+
+
+
 function savePageSection() {
   const divContainer = getGlobalData().divContainer;
   const currentPosition = divContainer.querySelectorAll(".step");
   const lastPosition = currentPosition[currentPosition.length - 1];
-
+  console.log(currentPosition)
   validateAndMarkAsComplete(lastPosition);
   storageInputsPart();
-
   const global = getGlobalData();
   const formData = global.formData;
-
   const jsonData = JSON.stringify(formData);
 
-  console.log(jsonData);
+  // console.log(jsonData);
+
 
   validateAndToggleSibling();
 }

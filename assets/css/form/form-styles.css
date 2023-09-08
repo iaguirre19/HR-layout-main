@@ -147,8 +147,7 @@ select {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    background: url('../../img/logos/arrow.svg') no-repeat right center;
-    padding-right: 20px;
+    background: url('../../img/logos/arrow.svg') no-repeat 98% center;
     background-color: #ffff;
     color: var(--border-input);
     border: 1px solid var(--border-input);
@@ -158,12 +157,7 @@ select {
     color: var(--border-input);
 }
 
-
-/* hidde the input slected */
-
-
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-    -webkit-appearance: none; 
-    margin: 0; 
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
 }
