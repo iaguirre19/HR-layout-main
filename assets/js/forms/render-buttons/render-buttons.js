@@ -1,8 +1,9 @@
 import { getGlobalData, buttonsShow, stepCounter, storeFormData } from "../global/global.js";
 import { showMessageHeader } from "../header-meesages/header-messages.js";
 import { storageInputsPart } from "../storageForm/storageForm.js";
+import { inputIncomplete } from "../validate-form/validateIncompleteInputs.js";
 // import { printContent } from "../print-form/printingForm.js";
-import { validateInputs } from "../validate-form/validationFunctions.js";
+import { isAllChildrenValid, validateInputs } from "../validate-form/validationFunctions.js";
 import { validateAndToggleSibling } from "../validate-toggle/validateToggle.js";
 
 
@@ -31,32 +32,18 @@ function changePage(action) {
   );
 
   if (activeIndex !== -1) {
+    // Active element returns to the group container
     const activeElement = currentPosition[activeIndex];
     if (action === "next") {
-      const invalidChild = activeElement.querySelector(".invalid");
 
-      if (invalidChild) {
-        console.log("Invalid input found in active element", invalidChild);
+      const isAllComplete = isAllChildrenValid(activeElement);
 
-        const invalidInputs = activeElement.querySelectorAll(
-          ".form-group.invalid input[required]:not(.valid)"
-        );
-        invalidInputs.forEach((input) => console.log("Invalid input:", input));
-      } else {
-        const nextInputs = activeElement.querySelectorAll(
-          ".valid"
-        );
-
-        if(nextInputs.length === 0){
-          console.log("Not all fields are valid");
-          return false
-        }else{
-          markAsComplete(activeElement);
-
-          const nextIndex = activeIndex + 1;
-          const nextElement = currentPosition[nextIndex];
-
-          if (nextElement) {
+      if(isAllComplete === true){
+        markAsComplete(activeElement);
+        
+        const nextIndex = activeIndex + 1;
+        const nextElement = currentPosition[nextIndex];
+        if (nextElement) {
             activeElement.classList.replace("active-part", "hidden");
             nextElement.classList.replace("hidden", "active-part");
 
@@ -64,8 +51,42 @@ function changePage(action) {
             validateInputs(divContainer);
             showMessageHeader(divContainer);
           }
-        } 
+        
+      }else{
+        const inputsInvalid = isAllComplete;
+        inputIncomplete(inputsInvalid)
       }
+      // const invalidChild = activeElement.querySelector(".invalid");
+
+      // if (invalidChild) {
+      //   console.log("Invalid input found in active element", invalidChild);
+
+      //   const invalidInputs = activeElement.querySelectorAll(
+      //     ".form-group.invalid input[required]:not(.valid)"
+      //   );
+      //   invalidInputs.forEach((input) => console.log("Invalid input:", input));
+      // } else {
+      //   const nextInputs = activeElement.querySelectorAll(".valid");
+
+      //   if (nextInputs.length === 0) {
+      //     console.log("Not all fields are valid");
+      //     return false;
+      //   } else {
+      //     markAsComplete(activeElement);
+
+      //     const nextIndex = activeIndex + 1;
+      //     const nextElement = currentPosition[nextIndex];
+
+      //     if (nextElement) {
+      //       activeElement.classList.replace("active-part", "hidden");
+      //       nextElement.classList.replace("hidden", "active-part");
+
+      //       buttonsShow(stepCounter(divContainer));
+      //       validateInputs(divContainer);
+      //       showMessageHeader(divContainer);
+      //     }
+      //   }
+      // }
     } else if (action === "prev") {
       const prevIndex = activeIndex - 1;
       const prevElement = currentPosition[prevIndex];
@@ -80,6 +101,11 @@ function changePage(action) {
     }
   }
 }
+
+
+
+
+
 
 function checkSiblingsComplete(element) {
   const siblings = Array.from(element.parentElement.children);
@@ -102,24 +128,63 @@ function checkSiblingsComplete(element) {
   }
 }
 
-function validateAndMarkAsComplete(element) {
-  const requiredInputs = element.querySelectorAll(
-    ".input-container input[required]"
-  );
 
-  console.log(requiredInputs)
-  const allFieldsValid = [...requiredInputs].every(
-    (input) => input.value !== ""
-  );
 
-  console.log(allFieldsValid)
-  if (allFieldsValid) {
-    markAsComplete(element);
-    checkSiblingsComplete(element); 
-  } else {
-    console.log("Not all fields are valid");
+
+
+
+function getVisibleInputValues(element) {
+  // Encuentra todos los elementos con la clase "valid" dentro del elemento dado.
+  const validElements = element.querySelectorAll(".valid");
+  const values = {};
+
+  if(!validElements){
+    return
+  }else{
+    validElements.forEach((validElement) => {
+      // Encuentra todos los elementos <input> y <select> dentro del elemento con la clase "valid".
+      const inputsAndSelects = validElement.querySelectorAll("input, select");
+  
+      inputsAndSelects.forEach((input) => {
+        // Verifica si el elemento está visible
+        const computedStyle = window.getComputedStyle(input);
+        if (computedStyle && computedStyle.display !== "none") {
+          // Si el elemento está visible, toma su valor y lo almacena en el objeto 'values'.
+          values[input.name] = input.value;
+        }
+      });
+    });
   }
+  console.log(values);
+
+  return values;
 }
+
+
+
+// function validateAndMarkAsComplete(element) {
+//   // console.log(element)
+//   // getVisibleInputValues(element)
+//   const requiredInputsAndSelects = element.querySelectorAll(
+//     ".input-container input[required], .input-container select[required]"
+//   );
+
+//   console.log(requiredInputsAndSelects);
+
+//   const allFieldsValid = [...requiredInputsAndSelects].every(
+//     (input) => input.value !== ""
+//   );
+
+//   // console.log(allFieldsValid);
+
+//   if (allFieldsValid) {
+//     markAsComplete(element);
+//     checkSiblingsComplete(element);
+//   } else {
+//     console.log("Not all fields are valid");
+//   }
+// }
+
 
 
 
@@ -128,17 +193,24 @@ function savePageSection() {
   const divContainer = getGlobalData().divContainer;
   const currentPosition = divContainer.querySelectorAll(".step");
   const lastPosition = currentPosition[currentPosition.length - 1];
-  console.log(currentPosition)
-  validateAndMarkAsComplete(lastPosition);
-  storageInputsPart();
-  const global = getGlobalData();
-  const formData = global.formData;
-  const jsonData = JSON.stringify(formData);
+  const isAllComplete = isAllChildrenValid(lastPosition);
+  if(isAllComplete === true){
+    checkSiblingsComplete(lastPosition);
+    markAsComplete(lastPosition);
+  }else{
+    const inputEmpty = inputIncomplete(isAllComplete)
+  }
+
+
+
+  // storageInputsPart();
+  // const global = getGlobalData();
+  // const formData = global.formData;
+  // const jsonData = JSON.stringify(formData);
 
   // console.log(jsonData);
 
 
-  validateAndToggleSibling();
 }
 
 
@@ -147,3 +219,8 @@ function printButtonModal() {
   console.log(data.formData);
   printContent();
 }
+
+
+
+
+// Nota corregir lo del salto de parte ya que los inputs que se agregan esta pidiendo que se validen entonces, crear una funcion que cree ese input.

@@ -20,8 +20,32 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+
+
+export const isAllChildrenValid = (element) => {
+  const children = element.children;
+  let inputIncomplete = [];
+
+  for (let i = 0; i < children.length; i++) {
+    const child = children[i];
+    if (!child.classList.contains("valid")) {
+      inputIncomplete.push(child);
+    }
+  }
+
+  if (inputIncomplete.length === 0) {
+    return true; // Todos los hijos tienen la clase "valid"
+  } else {
+    return inputIncomplete;
+  }
+};
+
+
+
 export function validateInputs(content) {
+  
   const activePart = content.querySelector(".active-part");
+
   if (!activePart) return;
 
   const inputs = activePart.querySelectorAll(
@@ -58,24 +82,11 @@ export function validateInputs(content) {
   };
   clickOnInput(inputs);
 
-  const createErrorMessage = (inputContainer, message) => {
-    const errCont = inputContainer.querySelector(".error-container");
-    if (!errCont.querySelector(".error-message")) {
-      const labelContainer = inputContainer.querySelector(".label-container");
-      const labelElement = labelContainer.querySelector("label");
-      const labelText = labelElement.textContent;
-      const errorMessage = document.createElement("span");
-      errorMessage.className = "error-message";
-      errorMessage.textContent = message;
-      errCont.appendChild(errorMessage);
-    }
-  };
 
   const handleInputBlur = (event) => {
     const input = event.target;
     const inputContainer = input.parentElement;
     const mainContainer = inputContainer.parentElement;
-    const errorContainer = mainContainer.querySelector(".error-container");
 
     if (input.validity.valid) {
       mainContainer.classList.add("valid");
@@ -87,13 +98,48 @@ export function validateInputs(content) {
       mainContainer.classList.add("invalid");
       mainContainer.classList.remove("active-check");
       mainContainer.classList.add("active-error");
-      const errorMessage = displayErrorMessages(input)
+      const errorMessage = displayErrorMessages(input);
       createErrorMessage(mainContainer, errorMessage);
     }
-  };  
+  };
 
+  // This function validates if the date entered is greater than the current date.
+  const validateDate = () => {
+    const dateInput = document.getElementById("event-date");
+    const inputContainer = dateInput.parentElement.parentNode;
+    const eventDate = new Date(dateInput.value);
+    const currentDate = new Date();
+
+    if (eventDate <= currentDate) {
+      dateInput.setCustomValidity(
+        "The date must be greater than the current date"
+      );
+      const message = "La fecha debe ser posterior a la fecha actual.";
+      createErrorMessage(inputContainer, message);
+    } else {
+      // Clear any error message and set validity state to true
+      dateInput.setCustomValidity("");
+      return;
+    }
+  };
+
+  document
+    .getElementById("event-date")
+    .addEventListener("change", validateDate);
   inputs.forEach((input) => {
     input.addEventListener("blur", handleInputBlur);
   });
 }
 
+export const createErrorMessage = (inputContainer, message) => {
+  const errCont = inputContainer.querySelector(".error-container");
+  if (!errCont.querySelector(".error-message")) {
+    const labelContainer = inputContainer.querySelector(".label-container");
+    const labelElement = labelContainer.querySelector("label");
+    const labelText = labelElement.textContent;
+    const errorMessage = document.createElement("span");
+    errorMessage.className = "error-message";
+    errorMessage.textContent = message;
+    errCont.appendChild(errorMessage);
+  }
+};
