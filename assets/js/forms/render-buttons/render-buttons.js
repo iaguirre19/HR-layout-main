@@ -1,10 +1,10 @@
 import { getGlobalData, buttonsShow, stepCounter, storeFormData } from "../global/global.js";
 import { showMessageHeader } from "../header-meesages/header-messages.js";
 import { storageInputsPart } from "../storageForm/storageForm.js";
-import { errorPrintMessage } from "../validate-form/validateErrorMessages.js";
+import { createErrorIfNeeded } from "../validate-form/validateErrorMessages.js";
 import { inputIncomplete } from "../validate-form/validateIncompleteInputs.js";
 // import { printContent } from "../print-form/printingForm.js";
-import { isAllChildrenValid, validateInputs } from "../validate-form/validationFunctions.js";
+import { createErrorMessage, isAllChildrenValid, validateInputs } from "../validate-form/validationFunctions.js";
 import { validateAndToggleSibling } from "../validate-toggle/validateToggle.js";
 
 
@@ -20,6 +20,7 @@ nextButton.addEventListener("click", () => changePage("next"));
 prevButton.addEventListener("click", () => changePage("prev"));
 saveButton.addEventListener("click", () => savePageSection())
 printButton.addEventListener("click", () => printButtonModal())
+acceptTerms.addEventListener("change", () => checkedTerms())
 
 
 function markAsComplete(element) {
@@ -75,7 +76,7 @@ function changePage(action) {
 
 function checkSiblingsComplete(element) {
   const siblings = Array.from(element.parentElement.children);
-  console.log(siblings)
+  // console.log(siblings)
 
   if (siblings.every((sibling) => sibling.classList.contains("complete"))) {
     const toggleContainer = getGlobalData().containerToggle;
@@ -96,44 +97,45 @@ function checkSiblingsComplete(element) {
 }
 
 function getVisibleInputValues(element) {
-  // Encuentra todos los elementos con la clase "valid" dentro del elemento dado.
-  const validElements = element.querySelectorAll(".valid");
+  const inputsAndSelects = element.querySelectorAll("input, select");
   const values = {};
 
-  if(!validElements){
-    return
-  }else{
-    validElements.forEach((validElement) => {
-      // Encuentra todos los elementos <input> y <select> dentro del elemento con la clase "valid".
-      const inputsAndSelects = validElement.querySelectorAll("input, select");
-  
-      inputsAndSelects.forEach((input) => {
-        // Verifica si el elemento está visible
-        const computedStyle = window.getComputedStyle(input);
-        if (computedStyle && computedStyle.display !== "none") {
-          // Si el elemento está visible, toma su valor y lo almacena en el objeto 'values'.
-          values[input.name] = input.value;
-        }
-      });
-    });
-  }
-  console.log(values);
-
+  inputsAndSelects.forEach((input) => {
+    const computedStyle = window.getComputedStyle(input);
+    if (computedStyle && computedStyle.display !== "none") {
+      values[input.name] = input.value;
+    }
+  });
   return values;
 }
 
+
+
+
+
+
 function savePageSection() {
   const divContainer = getGlobalData().divContainer;
+  const formGlobal = getGlobalData().formData;
   const currentPosition = divContainer.querySelectorAll(".step");
   const lastPosition = currentPosition[currentPosition.length - 1];
   const isAllComplete = isAllChildrenValid(lastPosition);
+  let valores = []
   if(isAllComplete === true){
+    const valuesReceived = getVisibleInputValues(divContainer);
+    formGlobal[divContainer.id] = valuesReceived;
+    const jsonData = JSON.stringify(formGlobal);
+    console.log(jsonData)
     markAsComplete(lastPosition);
     checkSiblingsComplete(lastPosition);
-    validateAndToggleSibling()
+    validateAndToggleSibling();
   }else{
-    const inputEmpty = inputIncomplete(isAllComplete)
+    inputIncomplete(isAllComplete)
   }
+
+
+  // Terminar esta parte me quede en guardar los daros de cada secccion con el bton de save en un array de objetos con la informaciond e cada seccion. revisar que la funcion funcione correctamente.
+  
 
 
 
@@ -147,25 +149,57 @@ function savePageSection() {
 
 }
 
+function checkedTerms(){
+  const errorCheckPrint = document.querySelector(".term-acceptance");
+
+  if(acceptTerms.checked){
+    const existingError = errorCheckPrint.querySelector(".error-print");
+    if (existingError) {
+      errorCheckPrint.removeChild(existingError);
+    }
+  }else{
+    createErrorIfNeeded();
+  }
+}
 
 function printButtonModal() {
-  const acceptTerms = document.querySelector("#accept-terms");
-  let checked = false;
-  if(!acceptTerms.checked){
-    errorPrintMessage(checked);
-    
-  }else{
-    checked = true;
-    errorPrintMessage(checked);
-    console.log("Si acepto los terminos")
+  const errorCheckPrint = document.querySelector(".term-acceptance");
+
+  if (!acceptTerms.checked) {
+    createErrorIfNeeded();
+  } else {
+    const existingError = errorCheckPrint.querySelector(".error-print");
+    if (existingError) {
+      errorCheckPrint.removeChild(existingError);
+    }
   }
-  // const data = getGlobalData();
-  // console.log(data.formData);
-  // printContent();
 }
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const data = getGlobalData();
+// console.log(data.formData);
+// printContent();
 
 
 // Nota corregir lo del salto de parte ya que los inputs que se agregan esta pidiendo que se validen entonces, crear una funcion que cree ese input.

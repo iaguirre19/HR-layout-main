@@ -218,7 +218,7 @@ const messagesErrorData = [
   },
 ];
 
-export function displayErrorMessages(input) {
+function displayErrorMessages(input) {
     const name = input.getAttribute("name");
         if (name) {
         const errorMessage = messagesErrorData.find((obj) => obj.name === name)?.message;
@@ -226,35 +226,29 @@ export function displayErrorMessages(input) {
             return errorMessage
         }
     }
-}
+};
 
 
-export const errorPrintMessage = (check) => {
-  if(!check){
-    
-    const errorCheckContainer = document.querySelector(".check-container")
-    
-    if(!errorCheckContainer.classList.contains(".term-acceptance")){
-      const errorCheckPrint = document.querySelector(".term-acceptance")
-      const errorCheck = document.createElement("div")
-      errorCheck.className = "error-print"
-  
-      const messageIcon = document.createElement("i");
-      messageIcon.className = "bx bx-error";
-    
-      const message = document.createElement("span");
-      message.textContent = "Acepta los terminos y condiciones para continuar"
-    
-      errorCheck.appendChild(messageIcon);
-      errorCheck.appendChild(message);
-    
-      errorCheckPrint.appendChild(errorCheck);
-    }else{
-      return
-    }
-  }else{
-    const errorCheckPrint = document.querySelector(".term-acceptance")
-    errorCheckPrint.parentNode.removeChild(errorCheckPrint);
-    
+function createErrorIfNeeded() {
+  const errorCheckPrint = document.querySelector(".term-acceptance");
+  const existingError = errorCheckPrint.querySelector(".error-print");
+
+  if (!existingError) {
+    const errorCheck = document.createElement("div");
+    errorCheck.className = "error-print";
+
+    const messageIcon = document.createElement("i");
+    messageIcon.className = "bx bx-error";
+
+    const message = document.createElement("span");
+    message.textContent = "Acepta los términos y condiciones para continuar";
+
+    errorCheck.appendChild(messageIcon);
+    errorCheck.appendChild(message);
+
+    errorCheckPrint.appendChild(errorCheck);
   }
 }
+
+export {displayErrorMessages, createErrorIfNeeded };
+

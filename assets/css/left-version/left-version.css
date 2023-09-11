@@ -96,7 +96,6 @@
   cursor: default;
   user-select: none;
   pointer-events: none;
-
 }
 .step-completion i{
   color: var(--toggle-icon-dark);
