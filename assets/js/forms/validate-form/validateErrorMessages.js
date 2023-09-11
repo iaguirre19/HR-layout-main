@@ -87,7 +87,7 @@ const messagesErrorData = [
   },
   {
     name: "extension",
-    message: "Ingresa la extensión del manager anterior.",
+    message: "Ingresa la extensión por favor.",
   },
   {
     name: "nombre_de_la_empresa_2",
@@ -103,7 +103,7 @@ const messagesErrorData = [
   },
   {
     name: "extension_2",
-    message: "Ingresa la extensión de tu manager anterior por favor.",
+    message: "Ingresa la extensión por favor.",
   },
   {
     name: "nombre_de_referencia_personal_1",

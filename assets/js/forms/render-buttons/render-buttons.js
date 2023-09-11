@@ -13,6 +13,7 @@ const nextButton = document.querySelector("#nextButton");
 const saveButton = document.querySelector("#saveButton");
 const prevButton = document.getElementById("prevButton");
 const printButton = document.querySelector(".print-button");
+const acceptTerms = document.querySelector("#accept-terms");
 
 nextButton.addEventListener("click", () => changePage("next"));
 prevButton.addEventListener("click", () => changePage("prev"));
@@ -102,11 +103,6 @@ function changePage(action) {
   }
 }
 
-
-
-
-
-
 function checkSiblingsComplete(element) {
   const siblings = Array.from(element.parentElement.children);
   console.log(siblings)
@@ -128,11 +124,6 @@ function checkSiblingsComplete(element) {
     }
   }
 }
-
-
-
-
-
 
 function getVisibleInputValues(element) {
   // Encuentra todos los elementos con la clase "valid" dentro del elemento dado.
@@ -161,35 +152,6 @@ function getVisibleInputValues(element) {
   return values;
 }
 
-
-
-// function validateAndMarkAsComplete(element) {
-//   // console.log(element)
-//   // getVisibleInputValues(element)
-//   const requiredInputsAndSelects = element.querySelectorAll(
-//     ".input-container input[required], .input-container select[required]"
-//   );
-
-//   console.log(requiredInputsAndSelects);
-
-//   const allFieldsValid = [...requiredInputsAndSelects].every(
-//     (input) => input.value !== ""
-//   );
-
-//   // console.log(allFieldsValid);
-
-//   if (allFieldsValid) {
-//     markAsComplete(element);
-//     checkSiblingsComplete(element);
-//   } else {
-//     console.log("Not all fields are valid");
-//   }
-// }
-
-
-
-
-
 function savePageSection() {
   const divContainer = getGlobalData().divContainer;
   const currentPosition = divContainer.querySelectorAll(".step");
@@ -217,9 +179,15 @@ function savePageSection() {
 
 
 function printButtonModal() {
-  const data = getGlobalData();
-  console.log(data.formData);
-  printContent();
+  const acceptTerms = document.querySelector("#accept-terms");
+  if(!acceptTerms.checked){
+    console.log("No acepto los terminos ")
+  }else{
+    console.log("Si acepto los terminos")
+  }
+  // const data = getGlobalData();
+  // console.log(data.formData);
+  // printContent();
 }
 
 
