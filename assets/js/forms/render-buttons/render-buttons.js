@@ -1,6 +1,7 @@
 import { getGlobalData, buttonsShow, stepCounter, storeFormData } from "../global/global.js";
 import { showMessageHeader } from "../header-meesages/header-messages.js";
 import { storageInputsPart } from "../storageForm/storageForm.js";
+import { errorPrintMessage } from "../validate-form/validateErrorMessages.js";
 import { inputIncomplete } from "../validate-form/validateIncompleteInputs.js";
 // import { printContent } from "../print-form/printingForm.js";
 import { isAllChildrenValid, validateInputs } from "../validate-form/validationFunctions.js";
@@ -57,37 +58,6 @@ function changePage(action) {
         const inputsInvalid = isAllComplete;
         inputIncomplete(inputsInvalid)
       }
-      // const invalidChild = activeElement.querySelector(".invalid");
-
-      // if (invalidChild) {
-      //   console.log("Invalid input found in active element", invalidChild);
-
-      //   const invalidInputs = activeElement.querySelectorAll(
-      //     ".form-group.invalid input[required]:not(.valid)"
-      //   );
-      //   invalidInputs.forEach((input) => console.log("Invalid input:", input));
-      // } else {
-      //   const nextInputs = activeElement.querySelectorAll(".valid");
-
-      //   if (nextInputs.length === 0) {
-      //     console.log("Not all fields are valid");
-      //     return false;
-      //   } else {
-      //     markAsComplete(activeElement);
-
-      //     const nextIndex = activeIndex + 1;
-      //     const nextElement = currentPosition[nextIndex];
-
-      //     if (nextElement) {
-      //       activeElement.classList.replace("active-part", "hidden");
-      //       nextElement.classList.replace("hidden", "active-part");
-
-      //       buttonsShow(stepCounter(divContainer));
-      //       validateInputs(divContainer);
-      //       showMessageHeader(divContainer);
-      //     }
-      //   }
-      // }
     } else if (action === "prev") {
       const prevIndex = activeIndex - 1;
       const prevElement = currentPosition[prevIndex];
@@ -180,15 +150,20 @@ function savePageSection() {
 
 function printButtonModal() {
   const acceptTerms = document.querySelector("#accept-terms");
+  let checked = false;
   if(!acceptTerms.checked){
-    console.log("No acepto los terminos ")
+    errorPrintMessage(checked);
+    
   }else{
+    checked = true;
+    errorPrintMessage(checked);
     console.log("Si acepto los terminos")
   }
   // const data = getGlobalData();
   // console.log(data.formData);
   // printContent();
 }
+
 
 
 

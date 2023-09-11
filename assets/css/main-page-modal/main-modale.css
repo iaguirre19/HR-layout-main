@@ -108,7 +108,21 @@
     column-gap: 1.2rem;
     font-size: 14px;
 }
+.error-print{
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+}
 
+.error-print i{
+    color: var(--error-color);
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+.error-print span{
+    color: var(--error-color);
+    font-size: 1.2rem;
+}
 
 
 

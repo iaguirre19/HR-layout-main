@@ -229,3 +229,32 @@ export function displayErrorMessages(input) {
 }
 
 
+export const errorPrintMessage = (check) => {
+  if(!check){
+    
+    const errorCheckContainer = document.querySelector(".check-container")
+    
+    if(!errorCheckContainer.classList.contains(".term-acceptance")){
+      const errorCheckPrint = document.querySelector(".term-acceptance")
+      const errorCheck = document.createElement("div")
+      errorCheck.className = "error-print"
+  
+      const messageIcon = document.createElement("i");
+      messageIcon.className = "bx bx-error";
+    
+      const message = document.createElement("span");
+      message.textContent = "Acepta los terminos y condiciones para continuar"
+    
+      errorCheck.appendChild(messageIcon);
+      errorCheck.appendChild(message);
+    
+      errorCheckPrint.appendChild(errorCheck);
+    }else{
+      return
+    }
+  }else{
+    const errorCheckPrint = document.querySelector(".term-acceptance")
+    errorCheckPrint.parentNode.removeChild(errorCheckPrint);
+    
+  }
+}
