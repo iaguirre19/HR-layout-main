@@ -1,41 +1,46 @@
 
 .data-groups {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  border: 1px solid black; 
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: 1px solid black; 
     border-radius: .4rem;
 }
 
 .data-group {
-  border-bottom: solid 1px black;
+    border-bottom: solid 1px black;
 }
 .data-group{
-   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
-  grid-template-rows: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
+    grid-template-rows: auto;
+    height: 10rem;
 }
 .data-group:last-of-type{
     border-bottom: none;
 }
 .data-field{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
     align-items: center;
-    justify-content: center;
     width: 100%;
     height: 100%;
     row-gap: 1rem;
     border-right: solid 1px black;
+    padding: 1rem;
 }
 .data-field:last-of-type{
     border-right: none;
 }
+.data-field span{
+    text-align: center;
+}
 .field-label{
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: bolder;
 }
 .field-value{
-    font-size: 1.4rem;
-    font-weight: 500;
+    font-size: 1.8rem;
+    font-weight: 5 00;
+    align-self: self-start;
 }

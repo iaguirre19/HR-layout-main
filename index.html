@@ -27,11 +27,17 @@
     <link rel="stylesheet" href="./assets/css/left-version/left-version.css"`>
     <link rel="stylesheet" href="./assets/css/right-version/right-version.css">
     <link rel="stylesheet" href="./assets/css/form/form-styles.css">
+    <link rel="stylesheet" href="./assets/css/loader/loader.css">
 
 </head>
 <body>
     <main class="main-content">
         <section class="content-section">
+            <div class="loader-container">
+                <div class="loader-content">
+                    <span class="loader"></span>
+                </div>
+            </div>
             <div class=" right-version">
                 <div class="main-page-modal">
                     <div class="main-page-container">
@@ -175,9 +181,9 @@
                                             <div class="input-container">
                                                 <select id="gender" name="genero" class="validate-select" required>
                                                     <option value="" disabled selected>Seleccione una opción</option>
-                                                    <option value="male">Masculino</option>
-                                                    <option value="female">Femenino</option>
-                                                    <option value="other">Otro</option>
+                                                    <option value="Maculino">Masculino</option>
+                                                    <option value="Femenino">Femenino</option>
+                                                    <option value="Otro">Otro</option>
                                                 </select>
                                             </div>
                                             <div class="error-container">
@@ -294,8 +300,8 @@
                                             <div class="input-container">
                                                 <select id="housing-tenure" name="tenencia_vivienda" class="validate-select" required>
                                                     <option value="" disabled selected>Selecciona una opción</option>
-                                                    <option value="own">Propia</option>
-                                                    <option value="rent">Alquiler</option>
+                                                    <option value="Propia">Propia</option>
+                                                    <option value="Alquiler">Alquiler</option>
                                                 </select>
                                             </div>
                                             <div class="error-container">
@@ -1189,8 +1195,6 @@
             </div>
         </section>
     </main>
-
-
 
     <script src="./assets/js/forms/clean-inputs/cleanInputs.js"></script>
     <script type="module" src="./assets/js/forms/formResultsUtils.js"></script>

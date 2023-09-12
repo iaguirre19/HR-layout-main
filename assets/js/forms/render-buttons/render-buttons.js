@@ -1,3 +1,6 @@
+// import { compareDataPersonalProperty } from "../../print-form/printFormValues.js";
+import { displayLoader } from "../../loader/displayLoader.js";
+import { saveInputsValue, saveLocalStorage } from "../../saveInputsValue/saveInputsValue.js";
 import { getGlobalData, buttonsShow, stepCounter, storeFormData } from "../global/global.js";
 import { showMessageHeader } from "../header-meesages/header-messages.js";
 import { storageInputsPart } from "../storageForm/storageForm.js";
@@ -116,38 +119,20 @@ function getVisibleInputValues(element) {
 
 function savePageSection() {
   const divContainer = getGlobalData().divContainer;
-  const formGlobal = getGlobalData().formData;
   const currentPosition = divContainer.querySelectorAll(".step");
   const lastPosition = currentPosition[currentPosition.length - 1];
   const isAllComplete = isAllChildrenValid(lastPosition);
-  let valores = []
-  if(isAllComplete === true){
+  const idContainer = divContainer.id;
+  if (isAllComplete === true) {
     const valuesReceived = getVisibleInputValues(divContainer);
-    formGlobal[divContainer.id] = valuesReceived;
-    const jsonData = JSON.stringify(formGlobal);
-    console.log(jsonData)
+    saveInputsValue(valuesReceived, idContainer);
     markAsComplete(lastPosition);
     checkSiblingsComplete(lastPosition);
     validateAndToggleSibling();
-  }else{
-    inputIncomplete(isAllComplete)
-  }
-
-
-  // Terminar esta parte me quede en guardar los daros de cada secccion con el bton de save en un array de objetos con la informaciond e cada seccion. revisar que la funcion funcione correctamente.
-  
-
-
-
-  // storageInputsPart();
-  // const global = getGlobalData();
-  // const formData = global.formData;
-  // const jsonData = JSON.stringify(formData);
-
-  // console.log(jsonData);
-
-
-}
+  } else {
+    inputIncomplete(isAllComplete);
+  };
+};
 
 function checkedTerms(){
   const errorCheckPrint = document.querySelector(".term-acceptance");
@@ -172,6 +157,14 @@ function printButtonModal() {
     if (existingError) {
       errorCheckPrint.removeChild(existingError);
     }
+    saveLocalStorage()
+    const formDataFromLocalStorage = JSON.parse(
+      localStorage.getItem("formData")
+    );
+
+    console.log(formDataFromLocalStorage)
+    displayLoader()
+
   }
 }
 

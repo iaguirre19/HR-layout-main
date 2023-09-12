@@ -13,8 +13,8 @@ body{
     justify-content: space-between;
 }
 .doc_data{
-    width: 42rem;
-    height: 100%;
+    width: 46rem;
+    height: 14rem;
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -30,9 +30,9 @@ body{
     height: 80%;
 }
 .doc_data-content{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 5%;
     align-items: center;
-    justify-content: space-between;
     border: solid .1rem black;
     padding: .5rem 4rem .5rem 1rem;
     border-radius: .2rem;

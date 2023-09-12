@@ -27,7 +27,7 @@
                 </div>
                 <div class="doc-position data">
                     <span>Vacante: </span>
-                    <span id="position">Ingeniero en software</span>
+                    <span id="position">""</span>
                 </div>
             </div>
         </div>
@@ -38,157 +38,347 @@
         </div>
     </header>
     <main class="main_container">
-        <section class="doc_pers-d section data-personal">
+        <section class="doc_pers-d section data-personal" id="data-personal">
             <h2>Datos Personales</h2>
             <div class="data-groups">
-              <div class="data-group">
-                <div class="data-field">
-                  <span class="field-label">Nombre</span>
-                  <span class="field-value">Rodrigo</span>
+                <div class="data-group">
+                    <div class="data-field">
+                        <span class="field-label">Nombre</span>
+                        <span class="field-value" id="nombre"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Apellido Paterno</span>
+                        <span class="field-value" id="apellido_paterno"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Apellido Materno</span>
+                        <span class="field-value" id="apellido_materno"></span>
+                    </div>
                 </div>
-                <div class="data-field">
-                  <span class="field-label">Apellido Paterno</span>
-                  <span class="field-value">Chavez</span>
+                <div class="data-group">
+                    <div class="data-field">
+                        <span class="field-label">Sexo</span>
+                        <span class="field-value" id="genero"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Calle y número</span>
+                        <span class="field-value" id="direccion"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Colonia</span>
+                        <span class="field-value" id="colonia"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">C.P.</span>
+                        <span class="field-value" id="codigo_postal"></span>
+                    </div>
                 </div>
-                <div class="data-field">
-                  <span class="field-label">Apellido Materno</span>
-                  <span class="field-value">Vazques</span>
+                <div class="data-group">
+                    <div class="data-field">
+                        <span class="field-label">Vive con</span>
+                        <span class="field-value" id="vive_con"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Casa propia o renta</span>
+                        <span class="field-value" id="tenencia_vivienda"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Estado civil</span>
+                        <span class="field-value" id="estado_civil"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Hijos</span>
+                        <span class="field-value" id="numero_de_hijos"></span>
+                    </div>
                 </div>
-                
-              </div>
-              <div class="data-group">
-                <div class="data-field">
-                  <span class="field-label">Sexo</span>
-                  <span class="field-value">Masculino</span>
+                <div class="data-group">
+                    <div class="data-field">
+                        <span class="field-label">Ciudad o delegación</span>
+                        <span class="field-value" id="ciudad_delegacion"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Estado</span>
+                        <span class="field-value" id="estado"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Lugar de nacimiento</span>
+                        <span class="field-value" id="lugar_nacimiento"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Nacionalidad</span>
+                        <span class="field-value" id="nacionalidad"></span>
+                    </div>
                 </div>
-                <div class="data-field">
-                  <span class="field-label">Calle y número</span>
-                  <span class="field-value">Calle Ejemplo #123</span>
+                <div class="data-group">
+                    <div class="data-field">
+                        <span class="field-label">Fecha de nacimiento</span>
+                        <span class="field-value" id="fecha_nacimiento"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Edad</span>
+                        <span class="field-value" id="edad"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Grados de estudio</span>
+                        <span class="field-value" id="grados_de_estudio"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Área o carrera</span>
+                        <span class="field-value" id="area_o_carrera"></span>
+                    </div>
                 </div>
-                <div class="data-field">
-                  <span class="field-label">Colonia</span>
-                  <span class="field-value">Colonia Ejemplo</span>
+                <div class="data-group">
+                    <div class="data-field">
+                        <span class="field-label">RFC</span>
+                        <span class="field-value" id="rfc"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">CURP</span>
+                        <span class="field-value" id="curp"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">IMSS</span>
+                        <span class="field-value" id="imss"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Cuenta con Visa?</span>
+                        <span class="field-value" id="cuenta_con_pasaporte"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Cuenta con visa?</span>
+                        <span class="field-value" id="cuenta_con_visa"></span>
+                    </div>
                 </div>
-                <div class="data-field">
-                  <span class="field-label">C.P.</span>
-                  <span class="field-value">12345</span>
+                <div class="data-group">
+                    <div class="data-field">
+                        <span class="field-label">Tel. fijo</span>
+                        <span class="field-value" id="telefono_fijo"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Tel. móvil</span>
+                        <span class="field-value" id="telefono_movil"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Email</span>
+                        <span class="field-value" id="correo_electronico"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">LinkedIn</span>
+                        <span class="field-value" id="linkedin"></span>
+                    </div>
                 </div>
-                
-              </div>
-              <div class="data-group">
-                <div class="data-field">
-                  <span class="field-label">Vive con</span>
-                  <span class="field-value">Familia</span>
-                </div>
-                <div class="data-field">
-                  <span class="field-label">Casa propia o renta</span>
-                  <span class="field-value">Renta</span>
-                </div>
-                <div class="data-field">
-                  <span class="field-label">Estado civil</span>
-                  <span class="field-value">Soltero/a</span>
-                </div>
-                <div class="data-field">
-                  <span class="field-label">Hijos</span>
-                  <span class="field-value">2</span>
-                </div>
-                
-              </div>
-              <div class="data-group">
-                <div class="data-field">
-                  <span class="field-label">Ciudad o delegación</span>
-                  <span class="field-value">Ciudad Ejemplo</span>
-                </div>
-                <div class="data-field">
-                  <span class="field-label">Estado</span>
-                  <span class="field-value">Estado Ejemplo</span>
-                </div>
-                <div class="data-field">
-                  <span class="field-label">Lugar de nacimiento</span>
-                  <span class="field-value">Ciudad Nacimiento</span>
-                </div>
-                <div class="data-field">
-                  <span class="field-label">Nacionalidad</span>
-                  <span class="field-value">Nacionalidad Ejemplo</span>
-                </div>
-              </div>
-              <div class="data-group">
-                <div class="data-field">
-                  <span class="field-label">Fecha de nacimiento</span>
-                  <span class="field-value">01/01/1990</span>
-                </div>
-                <div class="data-field">
-                  <span class="field-label">Edad</span>
-                  <span class="field-value">33 años</span>
-                </div>
-                <div class="data-field">
-                  <span class="field-label">Grados de estudio</span>
-                  <span class="field-value">Maestría</span>
-                </div>
-                <div class="data-field">
-                  <span class="field-label">Área o carrera</span>
-                  <span class="field-value">Carrera Ejemplo</span>
-                </div>
-              </div>
-              <div class="data-group">
-                <div class="data-field">
-                  <span class="field-label">RFC</span>
-                  <span class="field-value">RFC123456</span>
-                </div>
-                <div class="data-field">
-                  <span class="field-label">CURP</span>
-                  <span class="field-value">CURP123456</span>
-                </div>
-                <div class="data-field">
-                  <span class="field-label">IMSS</span>
-                  <span class="field-value">IMSS123456</span>
-                </div>
-                <div class="data-field">
-                  <span class="field-label">Cuenta con pasaporte o visa</span>
-                  <span class="field-value">Sí</span>
-                </div>
-              </div>
-              <div class="data-group">
-                <div class="data-field">
-                  <span class="field-label">No. crédito Infonavit</span>
-                  <span class="field-value">789</span>
-                </div>
-                <div class="data-field">
-                  <span class="field-label">No. crédito Fonacot</span>
-                  <span class="field-value">456</span>
-                </div>
-                <div class="data-field">
-                  <span class="field-label">Tel. fijo</span>
-                  <span class="field-value">123-456-7890</span>
-                </div>
-                <div class="data-field">
-                  <span class="field-label">Tel. móvil</span>
-                  <span class="field-value">987-654-3210</span>
-                </div>
-              </div>
             </div>
         </section>
-        <section class="doc_dat-comp section">
+        <section class="doc_dat-comp section" id="additional-data">
             <h2 class="dat-comp-title">Datos Complementarios</h2>
             <span class="sub-title">En caso de emergencia avisar a:</span>
             <div class="data-groups">
                 <div class="data-group">
                     <div class="data-field">
-                      <span class="field-label">Nombre Completo</span>
-                      <span class="field-value">Rodrigo</span>
+                        <span class="field-label">Nombre</span>
+                        <span class="field-value" id="nombre_contacto"></span>
                     </div>
                     <div class="data-field">
-                      <span class="field-label">Telefono de Contacto</span>
-                      <span class="field-value">Chavez</span>
+                        <span class="field-label">Apellido</span>
+                        <span class="field-value" id="apellido_contacto"></span>
                     </div>
                     <div class="data-field">
-                      <span class="field-label">Parentesco</span>
-                      <span class="field-value">Vazques</span>
+                        <span class="field-label">Telefono de Contacto</span>
+                        <span class="field-value" id="telefono_de_contacto"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Parentesco</span>
+                        <span class="field-value" id="parentesco_contacto"></span>
                     </div>
                 </div>
             </div>
         </section>
+        <section class="contacto-empresa section" id="contact-information">
+            <h2>Informacion de Contacto</h2>
+            <div class="data-groups">
+                <div class="data-group">
+                    <div class="data-field">
+                        <span class="field-label">Nombre de la Empresa</span>
+                        <span class="field-value" id="nombre_de_la_empresa_1"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Jefe Directo</span>
+                        <span class="field-value" id="jefe_directo"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Teléfono de Contacto</span>
+                        <span class="field-value" id="telefono_de_contacto"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Número de Extensión</span>
+                        <span class="field-value" id="extension"></span>
+                    </div>
+                </div>
+                <div class="data-group">
+                    <div class="data-field">
+                        <span class="field-label">Nombre de la Empresa</span>
+                        <span class="field-value" id="nombre_de_la_empresa_2"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Jefe Directo</span>
+                        <span class="field-value" id="jefe_directo_2"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Teléfono de Contacto</span>
+                        <span class="field-value" id="telefono_de_contacto_2"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Número de Extensión</span>
+                        <span class="field-value" id="extension_2"></span>
+                    </div>
+                </div>
+                <div class="data-group">
+                    <div class="data-field">
+                        <span class="field-label">Nombre (Referencia Personal)</span>
+                        <span class="field-value" id="nombre_de_referencia_personal_1"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Apellidos (Referencia Personal)</span>
+                        <span class="field-value" id="apellidos_de_referencia_personal_1"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Teléfono (Referencia Personal)</span>
+                        <span class="field-value" id="telefono_de_contacto_de_referencia_personal_1"></span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section class="informacion-salud section" id="health-information">
+            <h2>Información de Salud</h2>
+            <div class="data-groups">
+                <div class="data-group">
+                    <div class="data-field">
+                        <span class="field-label">Tipo de Sangre</span>
+                        <span class="field-value" id="tipo_de_sangre"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Alergias</span>
+                        <span class="field-value" id="alergias"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Tienes Diabetes</span>
+                        <span class="field-value" id="tiene_diabetes"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Tienes Hipertensión</span>
+                        <span class="field-value" id="tiene_hipertension"></span>
+                    </div>
+                </div>
+                <div class="data-group">
+                    <div class="data-field">
+                        <span class="field-label">Tienes Miopía o Astigmatismo</span>
+                        <span class="field-value" id="tiene_miopia_astigmatismo"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Tienes Dificultad Motriz</span>
+                        <span class="field-value" id="tiene_dificultad_motriz"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Estado de Salud</span>
+                        <span class="field-value" id="estado_de_salud"></span>
+                    </div>
+                </div>
+                <div class="data-group">
+                    <div class="data-field">
+                        <span class="field-label">Has Padecido Enfermedad Crónica</span>
+                        <span class="field-value" id="enfermedad_cronica"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Especifica la Enfermedad Crónica</span>
+                        <span class="field-value" id="enfermedad_cronica_especificar"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Has Padecido COVID-19 en los Últimos 6 Meses</span>
+                        <span class="field-value" id="has_covid_19"></span>
+                    </div>
+                </div>
+                <div class="data-group">
+                    <div class="data-field">
+                        <span class="field-label">Estás Vacunado contra COVID-19</span>
+                        <span class="field-value" id="covid_vaccination"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Estás Tomando Algun Medicamento Actualmente</span>
+                        <span class="field-value" id="tomar_medicamento"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Tienes Alguna Cita Programada</span>
+                        <span class="field-value" id="cita_programada"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Fecha de tu Cita</span>
+                        <span class="field-value" id="fecha_cita"></span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section class="confirmacion-requerida section" id="confirmation-required">
+            <h2>Confirmación Requerida</h2>
+            <div class="data-groups">
+                <div class="data-group">
+                    <div class="data-field">
+                        <span class="field-label">¿Actualmente estás estudiando?</span>
+                        <span class="field-value" id="estudias_actualmente"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">¿En qué grado escolar estás cursando?</span>
+                        <span class="field-value" id="grado_escolar"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Escribe tu horario escolar:</span>
+                        <span class="field-value" id="horario_escolar"></span>
+                    </div>
+                </div>
+                <div class="data-group">
+                    <div class="data-field">
+                        <span class="field-label">¿Tienes algún evento programado?</span>
+                        <span class="field-value" id="evento_programado"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Fecha del evento:</span>
+                        <span class="field-value" id="fecha_evento"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Motivo del evento:</span>
+                        <span class="field-value" id="motivo_evento"></span>
+                    </div>
+                </div>
+                <div class="data-group">
+                    <div class="data-field">
+                        <span class="field-label">Modo de Transporte:</span>
+                        <span class="field-value" id="medio_de_transporte"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Tiempo de Desplazamiento desde tu Casa:</span>
+                        <span class="field-value" id="tiempo_de_desplazamiento"></span>
+                    </div>
+                </div>
+                <div class="data-group">
+                    <div class="data-field">
+                        <span class="field-label">¿Tienes experiencia en ventas?</span>
+                        <span class="field-value" id="experiencia_en_ventas"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Especifica el tipo de experiencia en ventas:</span>
+                        <span class="field-value" id="tipo_de_experiencia_en_ventas"></span>
+                    </div>
+                    <div class="data-field">
+                        <span class="field-label">Nivel de Inglés:</span>
+                        <span class="field-value" id="nivel_de_ingles"></span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
     </main>
     <!-- <script src="./assets/js/forms/global/global.js"></script> -->
+    <script src="./assets/js/print-form/printFormValues.js"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@ let globalData = {
   divContainer: null,
   containerStep: null,
   containerToggle: null,
-  formData: [],
+  formData: {},
 };
 
 export function updateGlobalData(divContainer, containerStep, containerToggle) {
@@ -51,7 +51,6 @@ export const buttonsShow = (partNumber) => {
 };
 
 
-
 export const stepCounter = (sectionContainer) => {
   const stepCounterContainer = document.querySelector(".steps-container");
   const stepPrintCounter = document.querySelector(".step-counter-data");
@@ -87,7 +86,6 @@ export const stepCounter = (sectionContainer) => {
 
   return theCurrentStepIs;
 };
-
 
 //  cleans all classes complete
 export function clearComplete(getGlobalData) {
