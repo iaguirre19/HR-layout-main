@@ -1,34 +1,30 @@
+// Each of the values of the inputs will be saved in this object, the values are saved every time a section is completely filled, it is saved -
+// as soon as the user clicks save, this object will be taken later to send it to the database.
+// This object is stored in local storage in order to print the values in the form that is printed on the physical sheet.
+
 const dataValues = {
-"data-personal": null,
-"additional-data": null,
-"contact-information": null,
-"health-information": null,
-"confirmation-required": null,
+    "data-personal": null,
+    "additional-data": null,
+    "contact-information": null,
+    "health-information": null,
+    "confirmation-required": null,
 };
 const saveInputsValue = (value, idContainer) => {
-    if (dataValues.hasOwnProperty(idContainer)) {
-        if (dataValues[idContainer] !== null) {
-            dataValues[idContainer] = null;
-        }
-        dataValues[idContainer] = value;
-    } else {
-        console.log(
-            `El idContainer "${idContainer}" no coincide con ninguna propiedad válida en dataValues.`
-        );
+  if (dataValues.hasOwnProperty(idContainer)) {
+    if (dataValues[idContainer] !== null) {
+      dataValues[idContainer] = null;
     }
-    console.log(dataValues)
+    dataValues[idContainer] = value;
+  } else {
+    console.log(
+      `El idContainer "${idContainer}" no coincide con ninguna propiedad válida en dataValues.`
+    );
+  }
+  console.log(dataValues);
 };
 
 const saveLocalStorage = () => {
-    localStorage.setItem("formData", JSON.stringify(dataValues));
-}
+  localStorage.setItem("formData", JSON.stringify(dataValues));
+};
 
-
-export {saveInputsValue, saveLocalStorage}
-// const displayDataValuesAsJSON = () => {
-//     for (const prop in dataValues) {
-//         const propValue = dataValues[prop];
-//         const propJSON = JSON.stringify({ [prop]: propValue }, null, 2);
-//         console.log(`Property "${prop}":\n${propJSON}`);
-//     }
-// };
+export { saveInputsValue, saveLocalStorage };

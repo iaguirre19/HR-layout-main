@@ -1,13 +1,10 @@
-// import { compareDataPersonalProperty } from "../../print-form/printFormValues.js";
 import { displayLoader } from "../../loader/displayLoader.js";
 import { saveInputsValue, saveLocalStorage } from "../../saveInputsValue/saveInputsValue.js";
 import { getGlobalData, buttonsShow, stepCounter, storeFormData } from "../global/global.js";
 import { showMessageHeader } from "../header-meesages/header-messages.js";
-import { storageInputsPart } from "../storageForm/storageForm.js";
 import { createErrorIfNeeded } from "../validate-form/validateErrorMessages.js";
 import { inputIncomplete } from "../validate-form/validateIncompleteInputs.js";
-// import { printContent } from "../print-form/printingForm.js";
-import { createErrorMessage, isAllChildrenValid, validateInputs } from "../validate-form/validationFunctions.js";
+import { isAllChildrenValid, validateInputs } from "../validate-form/validationFunctions.js";
 import { validateAndToggleSibling } from "../validate-toggle/validateToggle.js";
 
 
@@ -167,32 +164,3 @@ function printButtonModal() {
 
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const data = getGlobalData();
-// console.log(data.formData);
-// printContent();
-
-
-// Nota corregir lo del salto de parte ya que los inputs que se agregan esta pidiendo que se validen entonces, crear una funcion que cree ese input.

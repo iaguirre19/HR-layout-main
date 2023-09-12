@@ -1,147 +1,78 @@
-// const formDataFromLocalStorage = JSON.parse(localStorage.getItem("formData"));
-
-// function compareDataPersonalProperty(formData) {
-//   // Obtén las propiedades del objeto "formData"
-//     const formDataProperties = Object.keys(formData);
-//     console.log(formData)
-
-//     const mainContainer = document.querySelector(".main_container");
-//     const valuesPrint = document.querySelectorAll(".field-value");
-//     const children = mainContainer.children;
-
-//     for (let i = 0; i < children.length; i++) {
-//         const child = children[i];
-//         const id = child.id;
-
-//         if (formDataProperties.includes(id)) {
-//             const values = formData[id];
-//             for(const prop in values){
-//                 if(values.hasOwnProperty(prop)){
-//                     const value = values[prop];
-//                     console.log(prop);
-//                     valuesPrint.forEach((vPrint) => {
-//                         const idField = vPrint.id;
-//                         if(idField === values[prop]){
-//                             vPrint.textContent = value
-//                         }
-//                     })
-//                 }
-//             }
-//         }
-
-//     }
-// }
-
-// compareDataPersonalProperty(formDataFromLocalStorage);
-
-
-
 
 const formDataFromLocalStorage = JSON.parse(localStorage.getItem("formData"));
 
 function compareDataPersonalProperty(formData) {
-  // Obtén las propiedades del objeto "formData"
-  const formDataProperties = Object.keys(formData);
+    const formDataProperties = Object.keys(formData);
+    const mainContainer = document.querySelector(".main_container");
+    const valuesPrint = document.querySelectorAll(".field-value");
+    const children = mainContainer.children;
 
-  const mainContainer = document.querySelector(".main_container");
-  const valuesPrint = document.querySelectorAll(".field-value");
-  const children = mainContainer.children;
-
-  for (let i = 0; i < children.length; i++) {
-    const child = children[i];
-    const id = child.id;
-
-    if (formDataProperties.includes(id)) {
-      const values = formData[id];
-      for (const prop in values) {
-        if (values.hasOwnProperty(prop)) {
-          const value = values[prop];
-          console.log(prop);
-          valuesPrint.forEach((vPrint) => {
-            const idField = vPrint.id;
-            if (idField === prop) {
-              vPrint.textContent = value;
+    for (let i = 0; i < children.length; i++) {
+        const child = children[i];
+        const id = child.id;
+        if (formDataProperties.includes(id)) {
+            const values = formData[id];
+            for (const prop in values) {
+                if (values.hasOwnProperty(prop)) {
+                    const value = values[prop];
+                    valuesPrint.forEach((vPrint) => {
+                        const idField = vPrint.id;
+                        if (idField === prop) {
+                            vPrint.textContent = value;
+                        }
+                    });
+                }
             }
-          });
         }
-      }
     }
-  }
+    validateSpacesEmpty(valuesPrint);
+    
+
 }
 
-// Ejemplo de objeto con valores
+
+function validateSpacesEmpty(fields) {
+  fields.forEach((field) => {
+    const content = field.textContent.trim();
+
+    if (content === "") {
+      field.textContent = "Ninguno";
+    } else {
+      // Capitaliza la primera letra y concatena el resto en minúsculas
+      field.textContent =
+        content.charAt(0).toUpperCase() + content.slice(1).toLowerCase();
+    }
+  });
+}
+
+function displayTimeAndDate() {
+
+    const currentDate = new Date();
+
+
+    const formattedHour = currentDate.getHours().toString().padStart(2, "0");
+    const formattedMinutes = currentDate.getMinutes().toString().padStart(2, "0");
+
+
+    const day = currentDate.getDate().toString().padStart(2, "0");
+    const month = (currentDate.getMonth() + 1).toString().padStart(2, "0"); // Note: In JavaScript, January is 0, February is 1, etc.
+    const year = currentDate.getFullYear();
+
+
+    const formattedDate = `${day}/${month}/${year}`;
+
+
+    const timeElement = document.getElementById("hrs");
+    if (timeElement) {
+        timeElement.textContent = `${formattedHour}:${formattedMinutes}`;
+    }
+
+    const dateElement = document.getElementById("date");
+    if (dateElement) {
+        dateElement.textContent = formattedDate;
+    }
+}
+
+
+
 compareDataPersonalProperty(formDataFromLocalStorage);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- // const jsonValue = JSON.stringify(value, null, 2);
-            // valuesPrint.forEach((content) => {
-            //     const contentId = content.id;
-            //     if(contentId === value)
-            //     console.log(contentId)
-            // })
-
-
-
-
-
-
-// function compareDataPersonalProperty(formData) {
-//   // Obtén las propiedades del objeto "formData"
-//   const formDataProperties = Object.keys(formData);
-
-//   const mainContainer = document.querySelector(".main_container");
-//   const children = mainContainer.querySelectorAll(".field-value");
-
-
-
-
-
-
-// //   children.forEach((child) => {
-// //     const id = child.getAttribute("id");
-
-// //     if (formDataProperties.includes(id)) {
-// //       const value = formData[id];
-// //       // Actualiza el contenido del elemento con el valor del objeto
-// //       child.textContent = `"${id}": "${value}"`;
-// //     }
-// //   });
-// }
-
-// // Ejemplo de objeto con valores
-// const formDataFromLocalStorage = JSON.parse(localStorage.getItem("formData"));
-// compareDataPersonalProperty(formDataFromLocalStorage);

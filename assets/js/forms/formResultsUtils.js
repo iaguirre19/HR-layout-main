@@ -81,9 +81,6 @@ const showFormContainerMatch = (idToggle, dataArray) => {
       selectedSection = section;
       displayHeaderInfo(idToggle, dataArray);
       showMessageHeader(selectedSection)
-
-      // Aqui se debe llamar la funcion.
-
     } else {
       section.classList.remove("active-selected");
     }
